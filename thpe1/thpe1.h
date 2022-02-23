@@ -8,3 +8,9 @@ using namespace std;
 
 
 string getCCType( string card);
+
+bool isAmexp( string card);
+
+bool isVisa( string card);
+
+bool isMaster( string card);
