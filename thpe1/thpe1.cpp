@@ -126,7 +126,7 @@ bool isDiscover( string card)
             return true;
         }
         cardnum = card.substr(0,6);
-        if( cardnum >= "622216" && cardnum <= "622926")
+        if( cardnum >= "622126" && cardnum <= "622926")
         {
             return true;
         }

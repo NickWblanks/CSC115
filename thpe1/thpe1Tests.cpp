@@ -83,5 +83,21 @@ TEST_CASE( "getCCType - Discover, range in 622126 - 622926")
 }
 
 
+TEST_CASE( "getCCType - Discover, boundary of 622126")
+{
+    string card = "6221267850492847";
+    string type;
+    type = getCCType( card);
+    REQUIRE( type == "Discover");
+}
+
+TEST_CASE( "getCCType - Discover, boundary of 622926")
+{
+    string card = "6229268574829302";
+    string type;
+    type = getCCType( card);
+    REQUIRE( type == "Discover");
+}
+
 
 
