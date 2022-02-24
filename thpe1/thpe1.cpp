@@ -25,9 +25,16 @@ string getCCType( string card )
             i++;
             return "Mastercard";
         }
+        cType = isDiscover( card);
+        if( cType == true)
+        {
+            i++;
+            return "Discover";
+        }
         i++;
         return "Unknown";
     }
+    return "Unknown";
 }
 
         
@@ -36,76 +43,96 @@ string getCCType( string card )
 
 bool isAmexp( string card)
 {
+    string cardnum;
     int length;
     length = card.size();
     
     if( length == 15)
     {
-        if( card.at(0) == '3')
+        cardnum = card.substr(0,2);
+        if( cardnum == "34" || "37")
         {
-            if( card.at(1) == '4' || '7')
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return true;
         }
-        else
-        {
-            return false;
-        }
-    }
-    else
-    {
         return false;
     }
+    return false;
 }
+
 
 
 bool isVisa( string card)
 {
+    string cardnum;
     int length;
     length = card.size();
     
     if( length == 13 || 16)
     {
-        if( card.at(0) == '4')
+        cardnum = card.substr(0,1);
+        if( cardnum == "4")
         {
             return true;
         }
-        else
-        {
-            return false;
-        }
-    }
-    else
-    {
         return false;
     }
+    return false;
 }
+
+        
 
 
 bool isMaster( string card)
 {
+    string cardnum;
     int length;
     length = card.size();
     
     if( length == 16)
     {
-        if( card.at(0) == '5')
+        cardnum = card.substr(0,2);
+        if( cardnum >= "50" && cardnum <= "55")
         {
-            if( card.at(1) == '0' || '1' || '2' || '3' || '4' || '5')
-            {
-                return true;
-            }
-            return false;
+            return true;
         }
         return false;
     }
+    return false;
+}
+        
+
+
+bool isDiscover( string card)
+{
+    string cardnum;
+    int length;
+    length = card.size();
+    
+    if( length == 16)
+    {
+        cardnum = card.substr(0,2);
+        if( cardnum == "65")
+        {
+            return true;
+        }
+        cardnum = card.substr(0,3);
+        if( cardnum >= "644" && cardnum <= "649")
+        {
+            return true;
+        }
+        cardnum = card.substr(0,4);
+        if( cardnum == "6011")
+        {
+            return true;
+        }
+        cardnum = card.substr(0,6);
+        if( cardnum >= "622216" && cardnum <= "622926")
+        {
+            return true;
+        }
+        return false;
+    }
+    return false;
 }
 
 
-    
-  

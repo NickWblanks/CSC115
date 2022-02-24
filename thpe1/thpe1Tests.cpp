@@ -49,3 +49,39 @@ TEST_CASE( "getCCType - Mastercard")
 }
 
 
+TEST_CASE( "getCCType - Discover, 65")
+{
+    string card = "6534885749203049";
+    string type;
+    type = getCCType( card);
+    REQUIRE( type == "Discover");
+}
+
+TEST_CASE( "getCCType - Discover, range in 644 - 649")
+{
+    string card = "6478405947827464";
+    string type;
+    type = getCCType( card);
+    REQUIRE( type == "Discover");
+}
+
+TEST_CASE( "getCCType - Discover, 6011")
+{
+    string card = "6011485740958473";
+    string type;
+    type = getCCType( card);
+    REQUIRE( type == "Discover");
+}
+
+
+TEST_CASE( "getCCType - Discover, range in 622126 - 622926")
+{
+    string card = "6223278495049376";
+    string type;
+    type = getCCType( card);
+    REQUIRE( type == "Discover");
+}
+
+
+
+
