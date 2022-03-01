@@ -100,4 +100,14 @@ TEST_CASE( "getCCType - Discover, boundary of 622926")
 }
 
 
+TEST_CASE( "isValidCC - checking digits.")
+{
+    string card = "123456789";
+    bool type;
+    type = isValidCC( card);
+    REQUIRE( type == true);
+}
+
+
+
 

@@ -136,3 +136,22 @@ bool isDiscover( string card)
 }
 
 
+bool isValidCC( string card)
+{
+    int length = card.size();
+    int i = 0;
+    bool valid;
+    while( i <= length)
+    {
+        valid = isdigit( card.at(i));
+        if( valid == false)
+        {
+            return false;
+        }
+        i++;
+        return true;
+    }
+}
+
+        
+                
