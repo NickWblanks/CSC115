@@ -18,5 +18,6 @@ bool isMaster( string card);
 bool isDiscover( string card);
 
 
+bool isNumbers( string card);
 
-bool isValidCC( string card);
+bool isLength( string card);

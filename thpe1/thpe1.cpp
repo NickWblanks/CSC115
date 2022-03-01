@@ -136,7 +136,7 @@ bool isDiscover( string card)
 }
 
 
-bool isValidCC( string card)
+bool isNumbers( string card)
 {
     int length = card.size();
     int i = 0;
@@ -153,6 +153,19 @@ bool isValidCC( string card)
     }
     return true;
 }
+
+
+bool isLength( string card)
+{
+    int length;
+    length = card.size();
+    if( length == 13 || 15 || 16)
+    {
+        return true;
+    }
+    return false;
+}
+
 
         
                 

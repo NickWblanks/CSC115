@@ -100,27 +100,57 @@ TEST_CASE( "getCCType - Discover, boundary of 622926")
 }
 
 
-TEST_CASE( "isValidCC - checking digits.")
+TEST_CASE( "isNumbers - checking digits.")
 {
     string card = "123456789";
     bool type;
-    type = isValidCC( card);
+    type = isNumbers( card);
     REQUIRE( type == true);
 }
 
-TEST_CASE( "isValidCC - testing false card, letters")
+TEST_CASE( "isNumbers - testing false card, letters")
 {
     string card = "1234567A";
     bool type;
-    type = isValidCC( card);
+    type = isNumbers( card);
     REQUIRE( type == false);
 }
 
 
-TEST_CASE( "isValidCC - testing false, letter at start")
+TEST_CASE( "isNumbers - testing false, letter at start")
 {
     string card = "a1234567";
     bool type;
-    type = isValidCC( card);
+    type = isNumbers( card);
     REQUIRE( type == false);
 }
+
+TEST_CASE( "islength - testing true, 13 numbers")
+{
+    string card = "1234567890493";
+    bool type = isLength( card);
+    REQUIRE( type == true);
+}
+
+    
+TEST_CASE( "isLength - testing true, 15 numbers")
+{
+    string card = "123456789012345";
+    bool type = isLength( card);
+    REQUIRE( type == true);
+}
+
+TEST_CASE( "isLength - testing true, 16 numbers")
+{
+    string card = "1234567890123456";
+    bool type = isLength( card);
+    REQUIRE( type == true);
+}
+
+TEST_CASE( "isLength - testing false, 12 numbers")
+{
+    string card = "123456789012";
+    bool type = isLength( card);
+    REQUIRE( type == true);
+}
+
