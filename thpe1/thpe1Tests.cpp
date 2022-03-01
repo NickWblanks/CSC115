@@ -108,6 +108,19 @@ TEST_CASE( "isValidCC - checking digits.")
     REQUIRE( type == true);
 }
 
+TEST_CASE( "isValidCC - testing false card, letters")
+{
+    string card = "1234567A";
+    bool type;
+    type = isValidCC( card);
+    REQUIRE( type == false);
+}
 
 
-
+TEST_CASE( "isValidCC - testing false, letter at start")
+{
+    string card = "a1234567";
+    bool type;
+    type = isValidCC( card);
+    REQUIRE( type == false);
+}

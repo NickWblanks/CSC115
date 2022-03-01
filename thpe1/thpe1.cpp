@@ -140,17 +140,18 @@ bool isValidCC( string card)
 {
     int length = card.size();
     int i = 0;
-    bool valid;
-    while( i <= length)
+    int valid;
+    while( i <= length - 1)
     {
         valid = isdigit( card.at(i));
         if( valid == false)
         {
+            i++;
             return false;
         }
-        i++;
-        return true;
+        i++;    
     }
+    return true;
 }
 
         
