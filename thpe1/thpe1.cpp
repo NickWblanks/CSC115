@@ -171,28 +171,41 @@ bool luhnsEven( string card)
     int newval = 0;
     int cardnum = 0;
     int i = 0;
+    int j = 1;
     int length = card.size();
-    int sum= 0;
+    int sum = 0;
+    int sum2 = 0;
+    int lastsum = 0;
     while( i <= length - 1)
     {
         cardnum = card.at(i);
-        cardnum = cardnum - '0';
-        newval = cardnum * 2;
+        newval = cardnum - '0';
+        newval = newval * 2;
         if( newval < 9)
         {
-            i = i + 2;
-            sum += newval;            
+         sum = sum + newval;   
         }
         if( newval > 9)
         {
-            i = i + 2;
-            newval = ( newval / newval) + ( newval % 10);
-            sum += newval;
+            newval = 1 + ( newval % 10);
+            sum = sum + newval;
         }
-        if( sum % 10 == 0)
-        {
-            return true;
-        }
+        i = i + 2;
     }
+    while( j <= length - 1)
+    {
+        cardnum = card.at(j);
+        cardnum = cardnum - '0';
+        sum2 = sum2 + cardnum;
+        j = j + 2;
+    }
+    lastsum = sum + sum2;
+    if( lastsum % 10 == 0)
+    {
+        return true;
+    }
+    return false;
 }
+
+
 

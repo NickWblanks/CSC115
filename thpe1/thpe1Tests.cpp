@@ -162,5 +162,17 @@ TEST_CASE( "luhnsEven - testing true, 4716150722142577")
 }
 
 
+TEST_CASE( "luhnsEven - testing true, 6440747636070782")
+{
+    string card = "6440747636070782";
+    bool type = luhnsEven( card);
+    REQUIRE( type == true);
+}
 
+TEST_CASE( "luhnsEven - testing false, 6585288877768476")
+{
+    string card = "6585288877768476";
+    bool type = luhnsEven( card);
+    REQUIRE( type == false);
+}
 
