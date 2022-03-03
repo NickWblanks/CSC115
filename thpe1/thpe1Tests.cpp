@@ -154,3 +154,13 @@ TEST_CASE( "isLength - testing false, 12 numbers")
     REQUIRE( type == true);
 }
 
+TEST_CASE( "luhnsEven - testing true, 4716150722142577")
+{
+    string card = "4716150722142577";
+    bool type = luhnsEven( card);
+    REQUIRE( type == true);
+}
+
+
+
+

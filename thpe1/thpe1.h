@@ -21,3 +21,5 @@ bool isDiscover( string card);
 bool isNumbers( string card);
 
 bool isLength( string card);
+
+bool luhnsEven( string card);
