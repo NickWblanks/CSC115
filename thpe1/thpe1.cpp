@@ -270,4 +270,33 @@ bool isLuhns( string card)
 
 
 
+bool isValidCC( string card)
+{
+    bool numbers = isNumbers( card);
+    bool len = isLength( card);
+    bool passLuhn = isLuhns( card);
+    if( numbers == false)
+    {
+        return false;
+    }
+    if( len == false)
+    {
+        return false;
+    }
+    if( passLuhn == false)
+    {
+        return false;
+    }
+    return true;
+}
+
+    
+
+        
+
+    
+
+
+
+
 

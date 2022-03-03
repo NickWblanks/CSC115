@@ -259,6 +259,38 @@ TEST_CASE( "isLuhns - testing false, letters in string")
     REQUIRE( type == false);
 }
 
+TEST_CASE( "isValidCC - testing false, letters in string")
+{
+    string card = "12345t";
+    bool type = isValidCC( card);
+    REQUIRE( type == false);
+}
+
+TEST_CASE( "isValidCC - testing false, not 13,15 or 16")
+{
+    string card = "123456789";
+    bool type = isValidCC( card);
+    REQUIRE( type == false);
+}
+
+
+TEST_CASE( "isValidCC - testing false, doesnt pass luhns")
+{
+    string card = "6585288877768476";
+    bool type = isValidCC( card);
+    REQUIRE( type == false);
+}
+
+
+TEST_CASE( "isValidCC - testing true, has all 3.")
+{
+    string card = "7425473237792";
+    bool type = isValidCC( card);
+    REQUIRE( type == true);
+}
+
+
+
 
 
 

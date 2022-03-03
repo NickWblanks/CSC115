@@ -6,8 +6,11 @@
 using namespace std;
 
 
+bool isValidCC( string card);
 
 string getCCType( string card);
+
+
 
 bool isAmexp( string card);
 
