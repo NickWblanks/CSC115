@@ -251,4 +251,23 @@ bool luhnsOdd( string card)
 }
 
 
+bool isLuhns( string card)
+{
+    int length = card.size();
+    bool luhns;
+    if( length == 16)
+    {
+        luhns = luhnsEven( card);
+        return luhns;
+    }
+    if( length == 13 || 15)
+    {
+        luhns = luhnsOdd( card);
+        return luhns;
+    }
+    return false;
+}
+
+
+
 

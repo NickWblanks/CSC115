@@ -25,3 +25,5 @@ bool isLength( string card);
 bool luhnsEven( string card);
 
 bool luhnsOdd( string card);
+
+bool isLuhns( string card);

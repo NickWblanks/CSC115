@@ -200,3 +200,66 @@ TEST_CASE( "luhnsOdd - testing false, 345649595068090")
 }
 
 
+TEST_CASE( "isLuhns - testing true, 16 digit card, 6440747636070782")
+{
+    string card = "6440747636070782";
+    bool type = isLuhns( card);
+    REQUIRE( type == true);
+}
+
+
+TEST_CASE( "isLuhns - testing true, 15 digits, 343669144240775")
+{
+    string card = "343669144240775";
+    bool type = isLuhns( card);
+    REQUIRE( type == true);
+}
+
+TEST_CASE( "isLuhns - testing true, 13 digits, 7425473237792")
+{
+    string card = "7425473237792";
+    bool type = isLuhns( card);
+    REQUIRE( type == true);
+}
+
+
+TEST_CASE( "isLuhns - testing false, 16 digits, 6585288877768476")
+{
+    string card = "6585288877768476";
+    bool type = isLuhns( card);
+    REQUIRE( type == false);
+}
+
+TEST_CASE( "isLuhns - testing false, 15 digits, 345649595068090")
+{
+    string card = "345649595068090";
+    bool type = isLuhns( card);
+    REQUIRE( type == false);
+}
+
+TEST_CASE( "isLuhns - testing false, 13 digits, 4425473125791")
+{
+    string card = "4425473125791";
+    bool type = isLuhns( card);
+    REQUIRE( type == false);
+}
+
+TEST_CASE( "isLuhns - testing false, not right amount of digits, 19284059384958")
+{
+    string card = "19284059384958";
+    bool type = isLuhns( card);
+    REQUIRE( type == false);
+}
+
+
+TEST_CASE( "isLuhns - testing false, letters in string")
+{
+    string card = "123456789012r";
+    bool type = isLuhns( card);
+    REQUIRE( type == false);
+}
+
+
+
+
+
