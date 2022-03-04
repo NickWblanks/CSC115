@@ -11,6 +11,15 @@ TEST_CASE( "getCCType - Unknown")
     REQUIRE( type == "Unknown");
 }
 
+TEST_CASE( "getCCType - Unknown, 15 digits but with letters")
+{
+    string card = "3790394029384h5";
+    string type;
+    type = getCCType( card);
+    REQUIRE( type == "Unknown");
+}
+
+
 
     
 TEST_CASE( "getCCType - American Express")
@@ -25,7 +34,7 @@ TEST_CASE( "getCCType - American Express")
 
 TEST_CASE( "getCCType - Visa, 16 chars")
 {
-    string card = "40000000000000000";
+    string card = "4000000000000000";
     string type;
     type = getCCType( card);
     REQUIRE( type == "Visa");
@@ -34,7 +43,7 @@ TEST_CASE( "getCCType - Visa, 16 chars")
 
 TEST_CASE( "getCCType - Visa 13 chars")
 {
-    string card = "40000000000000";
+    string card = "4000000000000";
     string type;
     type = getCCType( card);
     REQUIRE( type == "Visa");
@@ -101,6 +110,16 @@ TEST_CASE( "getCCType - Discover, boundary of 622926")
 }
 
 
+TEST_CASE( "getCCType - Unknown, invalid numbers")
+{
+    string card = "37903940293847a";
+    string type;
+    type = getCCType( card);
+    REQUIRE( type == "Unknown");
+}
+
+
+
 TEST_CASE( "isNumbers - checking digits.")
 {
     string card = "123456789";
@@ -152,7 +171,7 @@ TEST_CASE( "isLength - testing false, 12 numbers")
 {
     string card = "123456789012";
     bool type = isLength( card);
-    REQUIRE( type == true);
+    REQUIRE( type == false);
 }
 
 TEST_CASE( "luhnsEven - testing true, 4716150722142577")
@@ -289,6 +308,8 @@ TEST_CASE( "isValidCC - testing true, has all 3.")
     bool type = isValidCC( card);
     REQUIRE( type == true);
 }
+
+
 
 
 

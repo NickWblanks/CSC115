@@ -3,10 +3,10 @@
 
 string getCCType( string card )
 {
+    bool cType;
     int i = 0;
     while( i != 1)
     {
-        bool cType;
         cType = isAmexp( card);
         if( cType == true)
         {
@@ -46,9 +46,15 @@ bool isAmexp( string card)
     string cardnum;
     int length;
     length = card.size();
+    bool num;
     
     if( length == 15)
     {
+        num = isNumbers( card);
+        if( num == false)
+        {
+            return false;
+        }
         cardnum = card.substr(0,2);
         if( cardnum == "34" || "37")
         {
@@ -66,9 +72,15 @@ bool isVisa( string card)
     string cardnum;
     int length;
     length = card.size();
+    bool num;
     
-    if( length == 13 || 16)
+    if( length == 13 || length == 16)
     {
+        num = isNumbers( card);
+        if( num == false)
+        {
+            return false;
+        }
         cardnum = card.substr(0,1);
         if( cardnum == "4")
         {
@@ -87,9 +99,15 @@ bool isMaster( string card)
     string cardnum;
     int length;
     length = card.size();
+    bool num;
     
     if( length == 16)
     {
+        num = isNumbers( card);
+        if( num == false)
+        {
+            return false;
+        }
         cardnum = card.substr(0,2);
         if( cardnum >= "50" && cardnum <= "55")
         {
@@ -107,9 +125,15 @@ bool isDiscover( string card)
     string cardnum;
     int length;
     length = card.size();
+    bool num;
     
     if( length == 16)
     {
+        num = isNumbers( card);
+        if( num == false)
+        {
+            return false;
+        }
         cardnum = card.substr(0,2);
         if( cardnum == "65")
         {
@@ -159,7 +183,7 @@ bool isLength( string card)
 {
     int length;
     length = card.size();
-    if( length == 13 || 15 || 16)
+    if( length == 13 || length == 15 || length == 16)
     {
         return true;
     }
