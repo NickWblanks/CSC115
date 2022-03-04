@@ -22,6 +22,7 @@ TEST_CASE( "getCCType - American Express")
 }
 
 
+
 TEST_CASE( "getCCType - Visa, 16 chars")
 {
     string card = "40000000000000000";
