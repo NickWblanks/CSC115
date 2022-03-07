@@ -1,5 +1,32 @@
+/** **********************************************************************
+ * @file
+ ************************************************************************/
+
 #include "thpe1.h"
 
+/** **********************************************************************
+ *  @author Nicholas K Wilk
+ *
+ *  @par Description
+ *  
+ *  This function will return a string name of a credit card company based on the string input.
+ *  It will return unknown if the parameters do not match any of the known cards.
+ *
+ *  @param[in] card a string number to be checked.
+ *
+ *  @returns A string result of the credit card company that matches the number.  
+ *
+ *
+ *  @par Example
+ *  @verbatim
+    
+    string type;
+    type = getCCType( "1234509c39484") // return = "Unknown"
+    type = getCCType( "4492039485039484") // return = "Visa"
+    type = getCCType( "379039402938475") // return = "American Express"
+
+    @endverbatim
+ ************************************************************************/
 
 string getCCType( string card )
 {
@@ -37,9 +64,27 @@ string getCCType( string card )
     return "Unknown";
 }
 
-        
 
+/** **********************************************************************
+ *  @author Nicholas K Wilk
+ *
+ *  @par Description
+ *  Returns a boolean value based on the card whether or not the string matches the parameters of American Express cards.
+ *
+ *  @param[in] card A string number to be checked.
+ *
+ *  @returns A boolean result. True if the number matches the paramters of American Express cards.
+ *
+ *  @par Example
+ *  @verbatim
+    bool result;
     
+    result = isAmexp( "379039402938475") // will return true
+    result = isAmexp( "294038475729203") // will return false, doest start between 34-37
+
+    @endverbatim
+ ************************************************************************/
+        
 
 bool isAmexp( string card)
 {
@@ -56,7 +101,7 @@ bool isAmexp( string card)
             return false;
         }
         cardnum = card.substr(0,2);
-        if( cardnum == "34" || "37")
+        if( cardnum == "34" || cardnum == "37")
         {
             return true;
         }
@@ -64,6 +109,28 @@ bool isAmexp( string card)
     }
     return false;
 }
+
+
+/** **********************************************************************
+ *  @author Nicholas K Wilk
+ *
+ *  @par Description
+ *  Returns a boolean value based on the card whether or not the string matches the parameters of Visa cards.
+ *
+ *  @param[in] card A string number to be checked.
+ *
+ *  @returns A boolean result. True if the number matches the paramters of Visa cards.
+ *
+ *  @par Example
+ *  @verbatim
+    bool result;
+    
+    result = isVisa( "379039402938475") // will return false,doesnt have 13 or 16 numbers
+    result = isVisa( "4940384757292034") // will return true, starts with 4 and has 16 numbers
+
+    @endverbatim
+ ************************************************************************/
+        
 
 
 
@@ -91,7 +158,26 @@ bool isVisa( string card)
     return false;
 }
 
-        
+
+/** **********************************************************************
+ *  @author Nicholas K Wilk
+ *
+ *  @par Description
+ *  Returns a boolean value based on the card whether or not the string matches the parameters of Mastercard cards.
+ *
+ *  @param[in] card A string number to be checked.
+ *
+ *  @returns A boolean result. True if the number matches the paramters of Mastercard cards.
+ *
+ *  @par Example
+ *  @verbatim
+    bool result;
+    
+    result = isMaster( "379039402938475") // will return false,doesnt have 16 numbers
+    result = isMaster( "5440384757292034") // will return true, starts inbetween 50-55 and has 16 numbers
+
+    @endverbatim
+ ************************************************************************/
 
 
 bool isMaster( string card)
@@ -117,8 +203,26 @@ bool isMaster( string card)
     }
     return false;
 }
-        
 
+/** **********************************************************************
+ *  @author Nicholas K Wilk
+ *
+ *  @par Description
+ *  Returns a boolean value based on the card whether or not the string matches the parameters of Discover cards.
+ *
+ *  @param[in] card a string number to be checked.
+ *
+ *  @returns A boolean result. True if the number matches the paramters of Discover cards.
+ *
+ *  @par Example
+ *  @verbatim
+    bool result;
+    
+    result = isVisa( "379039402938475") // will return false,doesnt have 16 numbers
+    result = isVisa( "6450384757292034") // will return true, starts within range and has 16 numbers
+
+    @endverbatim
+ ************************************************************************/
 
 bool isDiscover( string card)
 {
@@ -160,6 +264,27 @@ bool isDiscover( string card)
 }
 
 
+/** **********************************************************************
+ *  @author Nicholas K Wilk
+ *
+ *  @par Description
+ *  Returns a boolean value based on the card whether or not the string contains numbers.
+ *
+ *  @param[in] card a string number to be checked.
+ *
+ *  @returns A boolean result. True if the card has numbers.
+ *
+ *  @par Example
+ *  @verbatim
+    bool result;
+    
+    result = isNumbers( "1234567891029") // returns true
+    result = isNumbers( "123456789o1@8") // returns false
+
+    @endverbatim 
+ ************************************************************************/
+
+
 bool isNumbers( string card)
 {
     int length = card.size();
@@ -179,6 +304,27 @@ bool isNumbers( string card)
 }
 
 
+/** **********************************************************************
+ *  @author Nicholas K Wilk
+ *
+ *  @par Description
+ *  Returns a boolean value based on the card whether or not the string contains the correct lengths of 13, 15 or 16.
+ *
+ *  @param[in] card a string number to be checked.
+ *
+ *  @returns A boolean result. True if the card has the correct length.
+ *
+ *  @par Example
+ *  @verbatim
+    bool result;
+    
+    result = isLength( "1234567891029") // returns true , 13 numbers
+    result = isLength( "123456789o1@8") // returns false, 14 characters
+
+    @endverbatim
+ ************************************************************************/
+
+
 bool isLength( string card)
 {
     int length;
@@ -189,6 +335,28 @@ bool isLength( string card)
     }
     return false;
 }
+
+/** **********************************************************************
+ *  @author Nicholas K Wilk
+ *
+ *  @par Description
+ *  Returns a boolean value based on cards of even length (16) and returns true if it passes Luhns algorithm.
+ *  Luhns is the sum of even position digits plus the sum of Odd digits (*2). If the odd is over 10, the individual digits are added,
+ *  I/E 6*2 = 12, 1+2 = 3, 3 will be added to sum. If final sum is divisible by 10 with no remainder, it passes Luhns.
+ *
+ *  @param[in] card a string number to be checked.
+ *
+ *  @returns A boolean result. True if the card passes luhns algorithm
+ *
+ *  @par Example
+ *  @verbatim
+    bool result;
+    
+    result = luhnsEven( "4716150722142577") //returns true
+    result = LuhnsEven( "6585288877768476") //returns false
+
+    @endverbatim
+ ************************************************************************/
 
 bool luhnsEven( string card)
 {
@@ -232,6 +400,27 @@ bool luhnsEven( string card)
 }
 
 
+/** **********************************************************************
+ *  @author Nicholas K Wilk
+ *
+ *  @par Description
+ *  Returns a boolean value based on cards of odd length (13 or 15) and returns true if it passes Luhns algorithm.
+ *  Luhns is the sum of odd position digits plus the sum of even digits times 2. If the even sum is over 10, the individual digits are added,
+ *  I/E 6*2 = 12, 1+2 = 3, 3 will be added to sum. If final sum is divisible by 10 with no remainder, it passes Luhns.
+ *
+ *  @param[in] card  a string number to be checked.
+ *
+ *  @returns A boolean result. True if the card passes luhns algorithm
+ *
+ *  @par Example
+ *  @verbatim
+    bool result;
+    
+    result = luhnsOdd( "7425473237792") //returns true
+    result = LuhnsOdd( "345649595068090") //returns false
+
+    @endverbatim
+ ************************************************************************/
 
 bool luhnsOdd( string card)
 {
@@ -275,6 +464,31 @@ bool luhnsOdd( string card)
 }
 
 
+
+/** **********************************************************************
+ *  @author Nicholas K Wilk
+ *
+ *  @par Description
+ *  Returns a boolean value that is determined by the cards length, 
+ *  and whether of not the card passes Luhns algorithm.
+ *  If the card is 16 digits long, it will be passed into luhnsEven.
+ *  If the card is 15 or 13 digits long, it will be passed into luhnsOdd.
+ *
+ *  @param[in] card a string number to be checked.
+ *
+ *  @returns A boolean result. True if the card passes luhns algorithm
+ *
+ *  @par Example
+ *  @verbatim
+    bool result;
+    
+    result = isLuhns( "6440747636070782") //returns true, 16 digits, no letters, and passes luhnsEven
+    result = isLuhns( "4425473125791") //returns false, 13 digits, no letters, but does not pass luhns
+
+    @endverbatim
+ ************************************************************************/
+
+
 bool isLuhns( string card)
 {
     int length = card.size();
@@ -292,6 +506,29 @@ bool isLuhns( string card)
     return false;
 }
 
+
+/** **********************************************************************
+ *  @author Nicholas K Wilk
+ *
+ *  @par Description
+ *  Returns a boolean value that determines whether a string of numbers 
+ *  input is a valid credit card number. It will return true only if its
+ *  length is 13,15,or 16, if it has no letters, and if it passes Luhns algorithm
+ *
+ *  @param[in] card A string number to be checked.
+ *
+ *  @returns A boolean result. True if the number is a valid credit card number
+ *
+ *  @par Example
+ *  @verbatim
+    bool result;
+    
+    result = isValidCC( "7425473237792" ) // returns true, 13 digits, no letters, and passes luhns
+    result = isValidCC( "6585288877768476" ) // returns false, 16 digits, no letters, but doesnt pass Luhns
+    
+
+    @endverbatim
+ ************************************************************************/
 
 
 bool isValidCC( string card)
