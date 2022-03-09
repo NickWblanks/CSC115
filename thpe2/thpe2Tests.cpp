@@ -61,5 +61,39 @@ TEST_CASE( "myCbrt - testing 0, should return 0")
     REQUIRE( ans == 0 );
 }
 
+TEST_CASE( "myCbrt - testing 8, should return 2")
+{
+    double stNum = 8;
+    double ans;
+    ans = myCbrt( stNum);
+    REQUIRE( ans == Approx(2));
+}
+
+TEST_CASE( "myCbrt - testing 125, should return 5")
+{
+    double stNum = 125;
+    double ans;
+    ans = myCbrt( stNum);
+    REQUIRE( ans  == Approx(5));
+}
+
+TEST_CASE( "myCbrt - testing 34, should return 3.2396118013")
+{
+    double stNum = 34;
+    double ans;
+    ans = myCbrt( stNum);
+    REQUIRE( ans == Approx( 3.2396118013));
+}
+
+TEST_CASE( "myCbrt - testing 187, should return 5.71848") //didnt go as far because the calculator would go past 5 decimals.
+{
+    double stNum = 187;
+    double ans;
+    ans = myCbrt( stNum);
+    REQUIRE( ans == Approx( 5.71848));
+}
+
+
+
     
 
