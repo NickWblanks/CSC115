@@ -35,3 +35,40 @@ double  mySqrt( double &stNum)
     }
     return 0;
 }
+
+
+double  myCbrt( double &stNum)
+{
+    int i = 0;
+    double check;
+    double low = 0;
+    double mid;
+    double max = stNum;
+    if( max <= 0 )
+    {
+        return 0;
+    }
+    while( i <= 5000)
+    {
+        mid = (max + low) / 2;
+        check = pow( mid, 3);
+        if( (fabs(check - stNum)) < ERRORVALUE)
+            {
+                return mid;
+            }
+            if( (fabs(check - stNum)) > ERRORVALUE)
+            {
+                if( check > stNum)
+                {
+                    max = mid;
+                    i++;
+                }
+                if( check < stNum)
+                {
+                    low = mid;
+                    i++;
+                }
+            }
+    }
+    return 0;
+}

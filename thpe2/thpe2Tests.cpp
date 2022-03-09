@@ -53,3 +53,13 @@ TEST_CASE( "mySqrt - testing 22.8, should return 4.77493455453")
 }
 
 
+TEST_CASE( "myCbrt - testing 0, should return 0")
+{
+    double stNum = 0;
+    double ans;
+    ans = myCbrt( stNum);
+    REQUIRE( ans == 0 );
+}
+
+    
+

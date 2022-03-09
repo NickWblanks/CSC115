@@ -12,4 +12,6 @@ const int ITERATIONMAX = 5000;
 const double ERRORTOLERANCE = .000001;
 
 
-double  mySqrt( double stNum);
+double  mySqrt( double &stNum);
+
+double myCbrt( double &stNum);
