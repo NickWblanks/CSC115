@@ -27,3 +27,5 @@ double myLog( int base, double arg);
 //Arrays
 
 void copyArray( double copy[], double start[], int size);
+
+void initialArray( double array[], int size, double value);

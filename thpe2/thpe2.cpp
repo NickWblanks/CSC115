@@ -136,3 +136,12 @@ void copyArray( double copy[], double start[], int size)
     }
 }
 
+void initialArray( double array[], int size, double value)
+{
+    int i = 0;
+    for( i = 0; i <= size -1; i++)
+    {
+        array[i] = value;
+    }
+}
+

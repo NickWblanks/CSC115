@@ -171,6 +171,23 @@ TEST_CASE( "copyArray - testing larger size.")
 }
 
 
+// initialArray
+
+TEST_CASE( "initialArray - testing all 0's")
+{
+    double array[5];
+    double value = 0;
+    initialArray( array, 5, 0);
+    CHECK( array[0] == 0);
+    CHECK( array[1] == 0);
+    CHECK( array[2] == 0);
+    CHECK( array[3] == 0);
+    CHECK( array[4] == 0);
+}
+
+    
+
+
 
 
     
