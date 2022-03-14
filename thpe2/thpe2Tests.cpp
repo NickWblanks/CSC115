@@ -94,6 +94,46 @@ TEST_CASE( "myCbrt - testing 187, should return 5.71848") //didnt go as far beca
 }
 
 
+TEST_CASE( "myLog - testing log2(0), is undefined, should return 0")
+{
+    double arg = 0;
+    int base = 2;
+    double ans;
+    ans = myLog( base, arg);
+    REQUIRE( ans == 0);
+}
+
+
+TEST_CASE( "myLog - testing log10(10), should return 1")
+{
+    double arg = 10;
+    int base = 10;
+    double ans;
+    ans = myLog(base, arg);
+    REQUIRE( ans == Approx( 1));
+}
+
+TEST_CASE( "myLog - testing log4(83), should return 3.1875197156735")
+{
+    double arg = 83;
+    int base = 4;
+    double ans;
+    ans = myLog( base, arg);
+    REQUIRE( ans == Approx( 3.1875197156735));
+}
+
+TEST_CASE( "myLog - testing log5(784), should return 4.1408301425379")
+{
+    double arg = 784;
+    int base = 5;
+    double ans;
+    ans = myLog( base, arg);
+    REQUIRE( ans == Approx( 4.1408301425379));
+}
+
+    
+
+
 
     
 
