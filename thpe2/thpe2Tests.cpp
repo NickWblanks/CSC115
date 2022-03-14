@@ -176,7 +176,6 @@ TEST_CASE( "copyArray - testing larger size.")
 TEST_CASE( "initialArray - testing all 0's")
 {
     double array[5];
-    double value = 0;
     initialArray( array, 5, 0);
     CHECK( array[0] == 0);
     CHECK( array[1] == 0);
@@ -184,6 +183,28 @@ TEST_CASE( "initialArray - testing all 0's")
     CHECK( array[3] == 0);
     CHECK( array[4] == 0);
 }
+
+
+TEST_CASE( "initialArray - testing 78 just because")
+{
+    double array[5];
+    initialArray( array, 5, 78);
+    CHECK( array[0] == 78);
+    CHECK( array[1] == 78);
+    CHECK( array[2] == 78);
+    CHECK( array[3] == 78);
+    CHECK( array[4] == 78);
+}
+
+TEST_CASE( "initialArray - testing larger array size, value of 18")
+{
+    double array[25];
+    initialArray( array, 25, 18);
+    CHECK( array[0] == 18);
+    CHECK( array[4] == 18);
+    CHECK( array[24] == 18);
+}
+
 
     
 
