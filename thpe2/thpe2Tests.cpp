@@ -2,6 +2,11 @@
 #include "..\\catch.hpp"
 #include "thpe2.h"
 
+
+
+
+//mySqrt
+
 TEST_CASE( "mySqrt - testing 0, should return 0")
 {
     double stNum = 0;
@@ -53,6 +58,9 @@ TEST_CASE( "mySqrt - testing 22.8, should return 4.77493455453")
 }
 
 
+
+//myCbrt
+
 TEST_CASE( "myCbrt - testing 0, should return 0")
 {
     double stNum = 0;
@@ -94,6 +102,8 @@ TEST_CASE( "myCbrt - testing 187, should return 5.71848") //didnt go as far beca
 }
 
 
+//myLog
+
 TEST_CASE( "myLog - testing log2(0), is undefined, should return 0")
 {
     double arg = 0;
@@ -132,6 +142,8 @@ TEST_CASE( "myLog - testing log5(784), should return 4.1408301425379")
 }
 
 
+//copy array
+
 TEST_CASE( "copyArray - testing to see if it works. checking end values")
 {
     double start[5] = {1, 2, 3, 1, 5};
@@ -143,3 +155,22 @@ TEST_CASE( "copyArray - testing to see if it works. checking end values")
     CHECK( copy[3] == 1);
     CHECK( copy[4] == 5);
 }
+
+
+TEST_CASE( "copyArray - testing larger size.")
+{
+    double start[15] = {25, 2, 36, 12, 54, 48, 29, 0, 19, 109, 88, 14, 74, 14, 9};
+    double copy[15];
+    copyArray( copy, start, 15);
+    CHECK( copy[0] == 25);
+    CHECK( copy[1] == 2);
+    CHECK( copy[2] == 36);
+    CHECK( copy[3] == 12);
+    CHECK( copy[4] == 54);
+    CHECK( copy[14] == 9);
+}
+
+
+
+
+    
