@@ -216,6 +216,24 @@ TEST_CASE( "sumArray - testing small array to see if it works")
     REQUIRE( sum == 8);
 }
 
+TEST_CASE( "sumArray - testing small array with mixed numbers")
+{
+    double array[7] = { 1, 3, 5, 6, 2, 9, 18};
+    double sum;
+    sum = sumArray( array, 7);
+    REQUIRE( sum == 44); 
+}
+
+TEST_CASE( "sumArray - testing medium array with decimal numbers")
+{
+    double array[12] = { 3.72, 4.8, 9.643, 25.4, 32.79, 12.022, 13.421, 2.1, 1.9, 10.001, 89.20, 102.1};
+    double sum;
+    sum = sumArray( array, 12);
+    REQUIRE( sum == 307.097);
+}
+
+
+
     
 
 
