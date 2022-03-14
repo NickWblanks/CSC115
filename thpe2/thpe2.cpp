@@ -130,7 +130,7 @@ double myLog( int base, double arg)
 void copyArray( double copy[], double start[], int size)
 {
     int i = 0;
-    for( i = 0; i < size - 1; i++)
+    for( i = 0; i <= size - 1; i++)
     {
         copy[i] = start[i];
     }

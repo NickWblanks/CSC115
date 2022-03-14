@@ -131,9 +131,15 @@ TEST_CASE( "myLog - testing log5(784), should return 4.1408301425379")
     REQUIRE( ans == Approx( 4.1408301425379));
 }
 
-    
 
-
-
-    
-
+TEST_CASE( "copyArray - testing to see if it works. checking end values")
+{
+    double start[5] = {1, 2, 3, 1, 5};
+    double copy[5];
+    copyArray( copy, start, 5);
+    CHECK( copy[0] == 1);
+    CHECK( copy[1] == 2);
+    CHECK( copy[2] == 3);
+    CHECK( copy[3] == 1);
+    CHECK( copy[4] == 5);
+}
