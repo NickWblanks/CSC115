@@ -145,3 +145,15 @@ void initialArray( double array[], int size, double value)
     }
 }
 
+
+double sumArray( double array[], int size)
+{
+    int i;
+    double sum = 0;
+    for( i = 0; i <= size -1; i++)
+    {
+        sum = (array[i]) + sum;
+    }
+    return sum;
+}
+

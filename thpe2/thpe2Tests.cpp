@@ -206,6 +206,19 @@ TEST_CASE( "initialArray - testing larger array size, value of 18")
 }
 
 
+//sumArray
+
+TEST_CASE( "sumArray - testing small array to see if it works")
+{
+    double array[4] = { 2, 2, 2, 2};
+    double sum;
+    sum = sumArray( array, 4);
+    REQUIRE( sum == 8);
+}
+
+    
+
+
     
 
 
