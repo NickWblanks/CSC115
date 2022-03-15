@@ -41,3 +41,5 @@ double minValue( double array[], int size);
 int maxLocation( double array[], int size);
 
 double maxValue( double array[], int size);
+
+int countIf( double array[], int size, double findVal);

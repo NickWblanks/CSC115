@@ -233,5 +233,21 @@ double maxValue( double array[], int size)  //finds the index with the highest v
     return array[max];
 }
 
+
+
+int countIf( double array[], int size, double findVal)
+{
+    int i = 0;
+    int count = 0;
+    for( i = 0; i <= size - 1; i++)
+    {
+        if( array[i] == findVal)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
     
 

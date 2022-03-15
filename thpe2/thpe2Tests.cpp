@@ -378,3 +378,13 @@ TEST_CASE( "maxValue - testing larger data set, max is in middle.")
     REQUIRE( value == 4.1000001);
 }
 
+//countIf
+
+TEST_CASE( "countIf - testing small data set, 6, appears twice.")
+{
+    double array[6] = {6, 1, 3, 4, 5, 6};
+    int findVal = 6;
+    int count;
+    count = countIf( array, 6, findVal);
+    REQUIRE( count == 2);
+}
