@@ -329,7 +329,24 @@ TEST_CASE( "minValue - testing larger data set, in middle")
 TEST_CASE( "maxLocation - testing small data set, first location is max")
 {
     double array[4] = {9, 2, 1, 3};
-    double location;
+    int location;
     location = maxLocation( array, 4);
     REQUIRE( location == 0);
+}
+
+TEST_CASE( "maxLocation - testing small data set, last location is max")
+{
+    double array[7] = {1, 2, 3, 4, 5, 6, 9};
+    int location;
+    location = maxLocation( array, 7);
+    REQUIRE( location == 6);
+}
+
+
+TEST_CASE( "maxLocation - testing larger data set with decimals, max is in middle")
+{
+    double array[12] = {1.3, 2.3, 9.8, 2.72, 90.32, 2.3, 90.31, 90, 12, 32, 12, 11};
+    int location;
+    location = maxLocation( array, 12);
+    REQUIRE( location == 4);
 }
