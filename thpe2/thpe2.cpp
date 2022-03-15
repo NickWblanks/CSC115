@@ -187,5 +187,7 @@ int minLocation( double array[], int size) //finds the index with the lowest val
     return min;
 }
 
+
+
     
 

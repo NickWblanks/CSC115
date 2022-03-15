@@ -272,6 +272,32 @@ TEST_CASE( "minLocation - testing basic data set, 0 position is min.")
     REQUIRE( location == 0);
 }
 
+TEST_CASE( "minLocation - testing basic data set, 6th position is min.")
+{
+    double array[7] = {7, 6, 5, 4, 3, 2, 1};
+    int location;
+    location = minLocation( array, 7);
+    REQUIRE( location == 6);
+}
+
+TEST_CASE( "minLocation - testing middle of array.")
+{
+    double array[4] = {2, 3, 1, 5};
+    int location;
+    location = minLocation( array, 4);
+    REQUIRE( location == 2);
+}
+
+TEST_CASE( "minLocation - larger data set with decimals.")
+{
+    double array[9] = { 0.89, 1, 1.2, 2.9, 0.0003, 0.03, 0.78, 0.000001, 1};
+    int location;
+    location = minLocation( array, 9);
+    REQUIRE( location == 7);
+}
+
+
+
     
 
 
