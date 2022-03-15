@@ -36,7 +36,4 @@ double averageArray( double array[], int size);
 
 int minLocation( double array[], int size);
 
-/*
 double minValue( double array[], int size);
-*/
-

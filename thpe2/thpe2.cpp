@@ -173,8 +173,8 @@ double averageArray( double array[], int size)
 }
 
 
-int minLocation( double array[], int size) //finds the index with the lowest value and returns it, doesnt return value of that idx
-{
+int minLocation( double array[], int size) //finds the index with the lowest value and returns the index
+{ 
     int i = 0;
     int min = 0;
     for( i = 0; i < size - 1; i++)
@@ -188,6 +188,20 @@ int minLocation( double array[], int size) //finds the index with the lowest val
 }
 
 
+
+double minValue( double array[], int size) //finds the index with the lowest value and returns that value
+{
+    int i = 0;
+    int min = 0;
+    for( i = 0; i < size - 1; i++)
+    {
+        if( array[min] > array[ i + 1])
+        {
+            min = i + 1;
+        }
+    }
+    return array[min];
+}
 
     
 

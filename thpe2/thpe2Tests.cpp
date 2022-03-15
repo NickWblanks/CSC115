@@ -296,6 +296,17 @@ TEST_CASE( "minLocation - larger data set with decimals.")
     REQUIRE( location == 7);
 }
 
+//minValue
+
+TEST_CASE( "minValue - small data set, testing first location")
+{
+    double array[5] = {2, 4, 6, 8, 10};
+    double value;
+    value = minValue( array, 5);
+    REQUIRE( value == 2);
+}
+
+
 
 
     
