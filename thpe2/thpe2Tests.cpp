@@ -233,6 +233,17 @@ TEST_CASE( "sumArray - testing medium array with decimal numbers")
 }
 
 
+//averageArray
+
+TEST_CASE( "averageArray - testing small data set.")
+{
+    double array[4] = {2, 2, 2, 2};
+    double avg;
+    avg = averageArray( array, 4);
+    REQUIRE( avg == 2);
+}
+
+
 
     
 

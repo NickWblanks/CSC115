@@ -159,3 +159,17 @@ double sumArray( double array[], int size)
 
 
 
+double averageArray( double array[], int size)
+{
+    int i;
+    double sum = 0;
+    double avg = 0;
+    for( i = 0; i <= size -1; i++)
+    {
+        sum = (array[i]) + sum;
+    }
+    avg = sum / size;
+    return avg;
+}
+
+
