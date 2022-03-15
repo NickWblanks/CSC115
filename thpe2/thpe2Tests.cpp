@@ -307,6 +307,25 @@ TEST_CASE( "minValue - small data set, testing first location")
 }
 
 
+TEST_CASE( "minValue - small data set, checking last location")
+{
+    double array[6] = {4, 5, 3, 2, 2, 1};
+    double value;
+    value = minValue( array, 6);
+    REQUIRE( value == 1);
+}
+
+
+TEST_CASE( "minValue - testing larger data set, in middle")
+{
+    double array[12] = {4, 41, 12, 2, 1.99, 23, 2, 3, 42, 10, 11, 12};
+    double value;
+    value = minValue(array, 12);
+    REQUIRE( value == 1.99);
+}
+
+
+
 
 
     
