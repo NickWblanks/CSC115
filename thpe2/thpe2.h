@@ -31,3 +31,12 @@ void copyArray( double copy[], double start[], int size);
 void initialArray( double array[], int size, double value);
 
 double sumArray( double array[], int size);
+
+double averageArray( double array[], int size);
+
+int minLocation( double array[], int size);
+
+/*
+double minValue( double array[], int size);
+*/
+

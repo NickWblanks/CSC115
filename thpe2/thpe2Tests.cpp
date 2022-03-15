@@ -262,10 +262,15 @@ TEST_CASE( "averageArray - testing larger data set with decimals.")
 }
 
 
+//minLocation
 
-
-    
-
+TEST_CASE( "minLocation - testing basic data set, 0 position is min.")
+{
+    double array[5] = {1, 2, 3, 4, 5};
+    int location;
+    location = minLocation( array, 5);
+    REQUIRE( location == 0);
+}
 
     
 
