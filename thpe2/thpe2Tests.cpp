@@ -244,6 +244,25 @@ TEST_CASE( "averageArray - testing small data set.")
 }
 
 
+TEST_CASE( "averageArray - testing larger data set, checking beginning and end.")
+{
+    double array[8] = {9, 12, 3, 4, 76, 4, 5, 23};
+    double avg;
+    avg = averageArray( array, 8);
+    REQUIRE( avg == 17);
+}
+
+
+TEST_CASE( "averageArray - testing larger data set with decimals.")
+{
+    double array[15] = {2.5, 4.92, 9.321, 2.2, 2.5, 3.5, 4.81, 6.77, 3.29, 2.98, 11.11, 12.32, 13.43, 14.34, 2.4};
+    double avg;
+    avg = averageArray( array, 15);
+    REQUIRE( avg == Approx( 6.426066666));
+}
+
+
+
 
     
 
