@@ -383,8 +383,27 @@ TEST_CASE( "maxValue - testing larger data set, max is in middle.")
 TEST_CASE( "countIf - testing small data set, 6, appears twice.")
 {
     double array[6] = {6, 1, 3, 4, 5, 6};
-    int findVal = 6;
+    double findVal = 6;
     int count;
     count = countIf( array, 6, findVal);
     REQUIRE( count == 2);
+}
+
+
+TEST_CASE( "countIf - testing data set without the findval, should return 0")
+{
+    double array[4] = {1, 2, 3, 4};
+    double findVal = 5;
+    int count;
+    count = countIf( array, 4, findVal);
+    REQUIRE( count == 0);
+}
+
+TEST_CASE( "countIf - testing larger data set with many of the findVals")
+{
+    double array[10] = {1, 2.2, 2.2, 2.2, 3, 4.5, 2.2, 2.2, 4, 8};
+    double findVal = 2.2;
+    int count;
+    count = countIf( array, 10, findVal);
+    REQUIRE( count == 5);
 }
