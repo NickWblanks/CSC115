@@ -203,5 +203,21 @@ double minValue( double array[], int size) //finds the index with the lowest val
     return array[min];
 }
 
+
+int maxLocation( double array[], int size) //finds the index with the highest value and returns that index
+{
+    int i = 0;
+    int max = 0;
+    for( i = 0; i < size - 1; i++)
+    {
+        if( array[max] < array[i + 1])
+        {
+            max = i + 1;
+        }
+    }
+    return max;
+}
+
+
     
 

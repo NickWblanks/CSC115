@@ -324,13 +324,12 @@ TEST_CASE( "minValue - testing larger data set, in middle")
     REQUIRE( value == 1.99);
 }
 
+//maxLocation
 
-
-
-
-    
-
-
-
-
-    
+TEST_CASE( "maxLocation - testing small data set, first location is max")
+{
+    double array[4] = {9, 2, 1, 3};
+    double location;
+    location = maxLocation( array, 4);
+    REQUIRE( location == 0);
+}
