@@ -362,3 +362,19 @@ TEST_CASE( "maxValue - testing small data set, max is in 1st position")
     REQUIRE( value == 99);
 }
 
+TEST_CASE( "maxValue - testing small data set, max is in last position")
+{
+    double array[8] = {1, 2, 3, 4, 5, 6, 7, 7.1};
+    double value;
+    value = maxValue( array, 8);
+    REQUIRE( value == 7.1);
+}
+
+TEST_CASE( "maxValue - testing larger data set, max is in middle.")
+{
+    double array[10] = {1.2, 2.1, 3.222, 4.1, 4.02, 4.1000001, 2, 1, 3.9, 4.001};
+    double value;
+    value = maxValue( array, 10);
+    REQUIRE( value == 4.1000001);
+}
+
