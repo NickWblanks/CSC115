@@ -350,3 +350,15 @@ TEST_CASE( "maxLocation - testing larger data set with decimals, max is in middl
     location = maxLocation( array, 12);
     REQUIRE( location == 4);
 }
+
+
+//maxValue
+
+TEST_CASE( "maxValue - testing small data set, max is in 1st position")
+{
+    double array[5] = {99, 1, 2, 3, 4};
+    double value;
+    value = maxValue( array, 5);
+    REQUIRE( value == 99);
+}
+
