@@ -255,21 +255,35 @@ void mySort( double array[], int size, string order)
     bool swapped = true;
     int i;
     int j;
-    for( i = 0; i < size - 1 && swapped == true; i++)
+    if( order == "ASC")
     {
-        swapped = false;
-        for( j = 0; j < size - 1 - i; j++)
-        {
-            if( array[j] > array[ j + 1])
+        for( i = 0; i < size - 1 && swapped == true; i++)
             {
-            swap( array[j + 1], array[j]);
-            swapped = true;
+                swapped = false;
+                for( j = 0; j < size - 1 - i; j++)
+                    {
+                        if( array[j] > array[ j + 1])
+                            {
+                                swap( array[j + 1], array[j]);
+                                swapped = true;
+                            }
+                    }
             }
-        }
+    }
+    if( order == "DSC")
+    {
+        for( i = 0; i < size - 1 && swapped == true; i++)
+            {
+                swapped = false;
+                for( j = 0; j < size - 1 - i; j++)
+                    {
+                        if( array[j] < array[ j + 1])
+                            {
+                                swap( array[j + 1], array[j]);
+                                swapped = true;
+                            }
+                    }
+            }
     }
 }
-
-    
-
-    
-
+        

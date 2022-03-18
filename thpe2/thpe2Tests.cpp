@@ -416,3 +416,22 @@ TEST_CASE( "mySort - bubble, testing ascending order, checking first and last da
     CHECK( array[0] == 1);
     CHECK( array[5] == 9);
 }
+
+TEST_CASE( "mySort - bubble, testing descending order, checking first and last data")
+{
+    double array[8] = { 1, 2, 3, 5, 6, 4, 1, 8};
+    mySort( array, 8, "DSC");
+    CHECK( array[0] == 8);
+    CHECK( array[7] == 1);
+}
+
+
+TEST_CASE( "mySort - bubble, testing larger data set, many duplicates")
+{
+    double array[15] = { 1, 1, 2, 3, 4, 5, 6, 6, 2, 1, 11, 14, 13, 1, 2};
+    mySort( array, 15, "DSC");
+    CHECK( array[0] == 14);
+    CHECK( array[1] == 13);
+    CHECK( array[14] == 1);
+    CHECK( array[13] == 1);
+}
