@@ -445,3 +445,21 @@ TEST_CASE( "linearSearch - testing small data set, findVal = 1")
     REQUIRE( location == 2);
 }
 
+
+TEST_CASE( "linearSearch - testing small set, findval not in array, should return -1")
+{
+    double array[5] = {1, 2, 3, 4, 5};
+    int location;
+    location = linearSearch( array, 5, 6);
+    REQUIRE( location == -1);
+}
+
+TEST_CASE( "linearSearch - testing larger set, findVal in multiple spots, should return first location found")
+{
+    double array[9] = { 30, 24, 11, 12, 34, 20, 15, 12, 10};
+    int location;
+    location = linearSearch( array, 9, 12);
+    REQUIRE( location == 3);
+}
+
+
