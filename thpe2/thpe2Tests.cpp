@@ -407,3 +407,12 @@ TEST_CASE( "countIf - testing larger data set with many of the findVals")
     count = countIf( array, 10, findVal);
     REQUIRE( count == 5);
 }
+
+
+TEST_CASE( "mySort - bubble, testing ascending order, checking first and last data")
+{
+    double array[6] = { 9, 3, 5, 7, 2, 1};
+    mySort( array, 6, "ASC");
+    CHECK( array[0] == 1);
+    CHECK( array[5] == 9);
+}

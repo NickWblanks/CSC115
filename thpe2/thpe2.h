@@ -43,3 +43,6 @@ int maxLocation( double array[], int size);
 double maxValue( double array[], int size);
 
 int countIf( double array[], int size, double findVal);
+
+void mySort( double array[], int size, string order);
+

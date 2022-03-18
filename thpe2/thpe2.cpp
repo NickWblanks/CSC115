@@ -249,5 +249,27 @@ int countIf( double array[], int size, double findVal)
     return count;
 }
 
+
+void mySort( double array[], int size, string order)
+{
+    bool swapped = true;
+    int i;
+    int j;
+    for( i = 0; i < size - 1 && swapped == true; i++)
+    {
+        swapped = false;
+        for( j = 0; j < size - 1 - i; j++)
+        {
+            if( array[j] > array[ j + 1])
+            {
+            swap( array[j + 1], array[j]);
+            swapped = true;
+            }
+        }
+    }
+}
+
+    
+
     
 
