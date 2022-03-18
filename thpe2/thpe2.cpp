@@ -287,3 +287,19 @@ void mySort( double array[], int size, string order)
     }
 }
         
+
+int linearSearch( double array[], int size, double findVal)
+{
+    int i;
+    for( i = 0; i < size; i++)
+    {
+        if( array[i] == findVal)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
+        
+        

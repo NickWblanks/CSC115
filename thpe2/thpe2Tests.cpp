@@ -435,3 +435,13 @@ TEST_CASE( "mySort - bubble, testing larger data set, many duplicates")
     CHECK( array[14] == 1);
     CHECK( array[13] == 1);
 }
+
+
+TEST_CASE( "linearSearch - testing small data set, findVal = 1")
+{
+    double array[5] = { 2, 3, 1, 4, 5};
+    int location;
+    location = linearSearch( array, 5, 1);
+    REQUIRE( location == 2);
+}
+

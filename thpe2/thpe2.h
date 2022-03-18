@@ -46,3 +46,5 @@ int countIf( double array[], int size, double findVal);
 
 void mySort( double array[], int size, string order);
 
+int linearSearch( double array[], int size, double findVal);
+
