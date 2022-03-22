@@ -48,3 +48,7 @@ void mySort( double array[], int size, string order);
 
 int linearSearch( double array[], int size, double findVal);
 
+int binarySearch( double array[], int size, double findVal);
+
+
+

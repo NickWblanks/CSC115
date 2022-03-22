@@ -409,6 +409,8 @@ TEST_CASE( "countIf - testing larger data set with many of the findVals")
 }
 
 
+//mySort
+
 TEST_CASE( "mySort - bubble, testing ascending order, checking first and last data")
 {
     double array[6] = { 9, 3, 5, 7, 2, 1};
@@ -437,6 +439,8 @@ TEST_CASE( "mySort - bubble, testing larger data set, many duplicates")
 }
 
 
+//linearSearch
+
 TEST_CASE( "linearSearch - testing small data set, findVal = 1")
 {
     double array[5] = { 2, 3, 1, 4, 5};
@@ -461,5 +465,18 @@ TEST_CASE( "linearSearch - testing larger set, findVal in multiple spots, should
     location = linearSearch( array, 9, 12);
     REQUIRE( location == 3);
 }
+
+
+//binarySearch
+
+TEST_CASE( "binarySearch - testing small set to see if it sorts")
+{
+    double array[5] = {5, 4, 3, 2, 1};
+    int location;
+    location = binarySearch( array, 5, 3);
+    REQUIRE( location == 2);
+}
+
+
 
 

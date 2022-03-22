@@ -301,5 +301,34 @@ int linearSearch( double array[], int size, double findVal)
     return -1;
 }
 
-        
-        
+
+int binarySearch( double array[], int size, double findVal)
+{
+    mySort( array, size, "ASC");
+    int low = 0;
+    int high = size - 1;
+    int mid;
+    while( low <= high)
+    {
+        mid = (low + high) /2;
+        if( array[mid] == findVal)
+        {
+            return mid;
+        }
+        if( array[mid] < findVal)
+        {
+            low = mid + 1;
+        }
+        if( array[mid] > findVal)
+        {
+            high = mid - 1;
+        }
+    }
+    return -1;
+}
+
+
+    
+    
+    
+    
