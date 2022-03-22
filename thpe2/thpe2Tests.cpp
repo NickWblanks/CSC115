@@ -477,6 +477,31 @@ TEST_CASE( "binarySearch - testing small set to see if it sorts")
     REQUIRE( location == 2);
 }
 
+TEST_CASE( "binarySearch - testing small data set, checking first position")
+{
+    double array[7] = {1, 4, 5, 7, 2, 3, 5};
+    int location;
+    location = binarySearch( array, 7, 1);
+    REQUIRE( location == 0);
+}
+
+TEST_CASE( "binarySearch - testing small set, checking last position")
+{
+    double array[8] = {4, 2, 3, 4, 1, 5, 7, 9};
+    int location;
+    location = binarySearch( array, 8, 9);
+    REQUIRE( location == 7);
+}
+
+TEST_CASE( "binarySearch - testing larger data set, value not found")
+{
+    double array[12] = { 32, 14, 15, 18, 29, 20, 17, 15, 23, 19, 90, 11};
+    int location;
+    location = binarySearch( array, 12, 16);
+    REQUIRE( location == -1);
+}
+
+
 
 
 
