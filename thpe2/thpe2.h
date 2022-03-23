@@ -2,7 +2,7 @@
 #include <string>
 #include <cmath>
 #include <cctype>
-
+#include <iostream>
 using namespace std;
 
 //global constants

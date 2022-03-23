@@ -1,5 +1,6 @@
 #include "thpe2.h"
 
+
 double  mySqrt( double &stNum)
 {
     int i = 0;
@@ -347,19 +348,23 @@ double mySin( double rads)
     int number = 1;
     double fac = factorial( number);
     double end = 0;
-    for( i = 0; i <= TERMS; i++)
+    for( i = 0; i <= TERMS; i++) 
     {
         if( swapsign == true)
         {
+            //cout << "+" << pow( rads, number) << " / " << fac << endl;
             end  = end + (pow( rads, number) / fac);
             swapsign = false;
             number = number + 2;
+            fac = factorial( number);
         }
-        if( swapsign == false)
+        else if( swapsign == false)
         {
-            end  = end + (pow( rads, number) / fac);
+            //cout << "-" << pow( rads, number) << " / " << fac << endl;
+            end  = end - (pow( rads, number) / fac);
             swapsign = true;
             number = number + 2;
+            fac = factorial( number);
         }
     }
     return end;

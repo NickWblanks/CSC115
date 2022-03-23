@@ -521,11 +521,34 @@ TEST_CASE( "factorial - checking, 3!, should return 6")
 
 TEST_CASE( "mySin - checking if it works, sin(0), should return 0")
 {
-    int rads = 0;
+    double rads = 0;
     double ans;
     ans = mySin( rads);
     REQUIRE( fabs( mySin( rads) - 0) < ERRORTOLERANCE);
 }
+
+TEST_CASE( "mySin - checking sin(PI/2) should return approximately 1")
+{
+    double rads = PI/2;
+    double ans = mySin( rads);
+    REQUIRE( (fabs( ans) - 1) < ERRORTOLERANCE);
+}
+
+TEST_CASE( "mySin - checking sin(PI/4) should return approximately .70710678118")
+{
+    double rads = PI/4;
+    double ans = mySin( rads);
+    REQUIRE( (fabs( ans) - .70710678118) < ERRORTOLERANCE);
+}
+
+TEST_CASE( "mySin - checking negative sin(PI/3) should return .86602540378")
+{
+    double rads = -PI/3;
+    double ans = mySin( rads);
+    REQUIRE( ( fabs( ans) - .86602540378) < ERRORTOLERANCE);
+}
+
+
 
 
 
