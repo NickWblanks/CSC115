@@ -370,3 +370,14 @@ double mySin( double rads)
     return end;
 }
 
+
+double mySinD( double degrees)
+{
+    double rads;
+    double ans;
+    rads = (degrees * PI) / 180;
+    ans = mySin( rads);
+    return ans;
+}
+
+

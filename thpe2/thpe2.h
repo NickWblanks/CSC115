@@ -56,3 +56,5 @@ double factorial( int number);
 
 double mySin( double rads);
 
+double mySinD( double degrees);
+

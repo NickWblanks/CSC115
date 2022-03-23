@@ -5,7 +5,7 @@
 
 
 
-//mySqrt
+//mySqrt ----------------------------------------------------------------------------
 
 TEST_CASE( "mySqrt - testing 0, should return 0")
 {
@@ -59,7 +59,7 @@ TEST_CASE( "mySqrt - testing 22.8, should return 4.77493455453")
 
 
 
-//myCbrt
+//myCbrt --------------------------------------------------------------------------
 
 TEST_CASE( "myCbrt - testing 0, should return 0")
 {
@@ -93,7 +93,7 @@ TEST_CASE( "myCbrt - testing 34, should return 3.2396118013")
     REQUIRE( ans == Approx( 3.2396118013));
 }
 
-TEST_CASE( "myCbrt - testing 187, should return 5.71848") //didnt go as far because the calculator would go past 5 decimals.
+TEST_CASE( "myCbrt - testing 187, should return 5.71848") //didnt go as far because the calculator wouldnt go past 5 decimals.
 {
     double stNum = 187;
     double ans;
@@ -102,7 +102,7 @@ TEST_CASE( "myCbrt - testing 187, should return 5.71848") //didnt go as far beca
 }
 
 
-//myLog
+//myLog -------------------------------------------------------------------------------------------------------
 
 TEST_CASE( "myLog - testing log2(0), is undefined, should return 0")
 {
@@ -142,7 +142,7 @@ TEST_CASE( "myLog - testing log5(784), should return 4.1408301425379")
 }
 
 
-//copy array
+//copy array ---------------------------------------------------------------------------------
 
 TEST_CASE( "copyArray - testing to see if it works. checking end values")
 {
@@ -171,7 +171,8 @@ TEST_CASE( "copyArray - testing larger size.")
 }
 
 
-// initialArray
+// initialArray -----------------------------------------------------------------------------
+
 
 TEST_CASE( "initialArray - testing all 0's")
 {
@@ -206,7 +207,7 @@ TEST_CASE( "initialArray - testing larger array size, value of 18")
 }
 
 
-//sumArray
+//sumArray ------------------------------------------------------------------------------------
 
 TEST_CASE( "sumArray - testing small array to see if it works")
 {
@@ -233,7 +234,7 @@ TEST_CASE( "sumArray - testing medium array with decimal numbers")
 }
 
 
-//averageArray
+//averageArray ----------------------------------------------------------------------------------------
 
 TEST_CASE( "averageArray - testing small data set.")
 {
@@ -262,7 +263,7 @@ TEST_CASE( "averageArray - testing larger data set with decimals.")
 }
 
 
-//minLocation
+//minLocation --------------------------------------------------------------------------
 
 TEST_CASE( "minLocation - testing basic data set, 0 position is min.")
 {
@@ -296,7 +297,7 @@ TEST_CASE( "minLocation - larger data set with decimals.")
     REQUIRE( location == 7);
 }
 
-//minValue
+//minValue -------------------------------------------------------------------------
 
 TEST_CASE( "minValue - small data set, testing first location")
 {
@@ -324,7 +325,7 @@ TEST_CASE( "minValue - testing larger data set, in middle")
     REQUIRE( value == 1.99);
 }
 
-//maxLocation
+//maxLocation ------------------------------------------------------------------------
 
 TEST_CASE( "maxLocation - testing small data set, first location is max")
 {
@@ -352,7 +353,7 @@ TEST_CASE( "maxLocation - testing larger data set with decimals, max is in middl
 }
 
 
-//maxValue
+//maxValue -------------------------------------------------------------------------------------
 
 TEST_CASE( "maxValue - testing small data set, max is in 1st position")
 {
@@ -378,7 +379,7 @@ TEST_CASE( "maxValue - testing larger data set, max is in middle.")
     REQUIRE( value == 4.1000001);
 }
 
-//countIf
+//countIf ---------------------------------------------------------------------------------
 
 TEST_CASE( "countIf - testing small data set, 6, appears twice.")
 {
@@ -409,7 +410,7 @@ TEST_CASE( "countIf - testing larger data set with many of the findVals")
 }
 
 
-//mySort
+//mySort ----------------------------------------------------------------------------------------------
 
 TEST_CASE( "mySort - bubble, testing ascending order, checking first and last data")
 {
@@ -439,7 +440,7 @@ TEST_CASE( "mySort - bubble, testing larger data set, many duplicates")
 }
 
 
-//linearSearch
+//linearSearch ------------------------------------------------------------------------------------
 
 TEST_CASE( "linearSearch - testing small data set, findVal = 1")
 {
@@ -467,7 +468,7 @@ TEST_CASE( "linearSearch - testing larger set, findVal in multiple spots, should
 }
 
 
-//binarySearch
+//binarySearch --------------------------------------------------------------------------------------
 
 TEST_CASE( "binarySearch - testing small set to see if it sorts")
 {
@@ -501,6 +502,9 @@ TEST_CASE( "binarySearch - testing larger data set, value not found")
     REQUIRE( location == -1);
 }
 
+
+//factorial--------------------------------------------------------------------------------
+
 TEST_CASE( "factorial - checking factorial function, 4!, should return 24")
 {
     int number = 4;
@@ -518,6 +522,8 @@ TEST_CASE( "factorial - checking, 3!, should return 6")
     REQUIRE( result == 6);
 }
 
+
+//mySin ---------------------------------------------------------------------------------
 
 TEST_CASE( "mySin - checking if it works, sin(0), should return 0")
 {
@@ -548,6 +554,16 @@ TEST_CASE( "mySin - checking negative sin(PI/3) should return .86602540378")
     REQUIRE( ( fabs( ans) - .86602540378) < ERRORTOLERANCE);
 }
 
+//mySinD -----------------------------------------------------------------------
+
+TEST_CASE( "mySinD - checking 90 degrees, should return approximately 1")
+{
+    double degrees = 90;
+    double ans = mySinD( degrees);
+    REQUIRE( (fabs( ans) - 1) < ERRORTOLERANCE);
+}
+
+    
 
 
 
