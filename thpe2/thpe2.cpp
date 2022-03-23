@@ -310,7 +310,7 @@ int binarySearch( double array[], int size, double findVal)
     int mid;
     while( low <= high)
     {
-        mid = (low + high) /2;
+        mid = (low + high) / 2;
         if( array[mid] == findVal)
         {
             return mid;
@@ -328,7 +328,40 @@ int binarySearch( double array[], int size, double findVal)
 }
 
 
-    
-    
-    
-    
+double factorial( int number)
+{
+    int i;
+    int sum = 1;
+    for( i = 1; i <= number; i++)
+    {
+        sum = sum * i;
+    }
+    return sum;
+}
+
+
+double mySin( double rads)
+{
+    bool swapsign = true;
+    int i = 0;
+    int number = 1;
+    double fac = factorial( number);
+    double end = 0;
+    for( i = 0; i <= TERMS; i++)
+    {
+        if( swapsign == true)
+        {
+            end  = end + (pow( rads, number) / fac);
+            swapsign = false;
+            number = number + 2;
+        }
+        if( swapsign == false)
+        {
+            end  = end + (pow( rads, number) / fac);
+            swapsign = true;
+            number = number + 2;
+        }
+    }
+    return end;
+}
+

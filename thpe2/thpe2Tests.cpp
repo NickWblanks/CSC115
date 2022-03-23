@@ -501,7 +501,31 @@ TEST_CASE( "binarySearch - testing larger data set, value not found")
     REQUIRE( location == -1);
 }
 
+TEST_CASE( "factorial - checking factorial function, 4!, should return 24")
+{
+    int number = 4;
+    double result;
+    result = factorial( number);
+    REQUIRE( result == 24);
+}
 
+
+TEST_CASE( "factorial - checking, 3!, should return 6")
+{
+    int number = 3;
+    double result;
+    result = factorial( number);
+    REQUIRE( result == 6);
+}
+
+
+TEST_CASE( "mySin - checking if it works, sin(0), should return 0")
+{
+    int rads = 0;
+    double ans;
+    ans = mySin( rads);
+    REQUIRE( fabs( mySin( rads) - 0) < ERRORTOLERANCE);
+}
 
 
 

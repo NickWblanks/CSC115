@@ -50,5 +50,9 @@ int linearSearch( double array[], int size, double findVal);
 
 int binarySearch( double array[], int size, double findVal);
 
+//extra functions
 
+double factorial( int number);
+
+double mySin( double rads);
 
