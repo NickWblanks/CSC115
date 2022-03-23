@@ -547,7 +547,7 @@ TEST_CASE( "mySin - checking sin(PI/4) should return approximately .70710678118"
     REQUIRE( (fabs( ans) - .70710678118) < ERRORTOLERANCE);
 }
 
-TEST_CASE( "mySin - checking negative sin(PI/3) should return .86602540378")
+TEST_CASE( "mySin - checking negative sin(PI/3) should return -.86602540378")
 {
     double rads = -PI/3;
     double ans = mySin( rads);
@@ -562,6 +562,22 @@ TEST_CASE( "mySinD - checking 90 degrees, should return approximately 1")
     double ans = mySinD( degrees);
     REQUIRE( (fabs( ans) - 1) < ERRORTOLERANCE);
 }
+
+
+TEST_CASE( "mySinD - checking 30 degrees, should return .5")
+{
+    double degrees = 30;
+    double ans = mySinD( degrees);
+    REQUIRE( (fabs( ans) - .5) < ERRORTOLERANCE);
+}
+
+TEST_CASE( "mySinD - checking -45 degrees, should return - .70710678118")
+{
+    double degrees = -45;
+    double ans = mySinD( degrees);
+    REQUIRE( ( fabs( ans) - .70710678118) < ERRORTOLERANCE);
+}
+
 
     
 
