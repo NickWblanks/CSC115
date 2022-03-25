@@ -381,3 +381,30 @@ double mySinD( double degrees)
 }
 
 
+double myCos( double rads)
+{
+    bool swapsign = true;
+    int i;
+    int number = 2;
+    double fac = factorial( number);
+    double end = 1;
+    for( i = 0; i <= TERMS; i++)
+    {
+        if( swapsign == true)
+        {
+            end  = end - (pow( rads, number) / fac);
+            swapsign = false;
+            number = number + 2;
+            fac = factorial( number);
+        }
+        else if( swapsign == false)
+        {
+            end  = end + (pow( rads, number) / fac);
+            swapsign = false;
+            number = number + 2;
+            fac = factorial( number);
+        }
+    }
+    return end;
+}
+

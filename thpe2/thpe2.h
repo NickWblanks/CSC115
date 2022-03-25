@@ -58,3 +58,6 @@ double mySin( double rads);
 
 double mySinD( double degrees);
 
+double myCos( double rads);
+
+

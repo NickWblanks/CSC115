@@ -579,6 +579,13 @@ TEST_CASE( "mySinD - checking -45 degrees, should return - .70710678118")
 }
 
 
+TEST_CASE( "myCosine - checking 0, should return 1")
+{
+    double rads = 0;
+    double ans = myCos( rads);
+    REQUIRE( (fabs( ans) - 1) < ERRORTOLERANCE);
+}
+
     
 
 
