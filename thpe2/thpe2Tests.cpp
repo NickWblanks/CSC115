@@ -608,3 +608,10 @@ TEST_CASE( "myCosine - checking PI/3, should return about .5")
     REQUIRE( (fabs( ans) - .5) < ERRORTOLERANCE);
 }
 
+TEST_CASE( "myCosD - checking 90 degrees, should return 0")
+{
+    double degrees = 90;
+    double ans = myCosD( degrees);
+    REQUIRE( (fabs( ans) - 0) < ERRORTOLERANCE);
+}
+

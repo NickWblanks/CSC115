@@ -392,7 +392,7 @@ double myCos( double rads)
     {
         if( swapsign == true)
         {
-            cout << "+" << pow( rads, number) << " / " << fac << endl;
+            //cout << "-" << pow( rads, number) << " / " << fac << endl;
             end  = end - (pow( rads, number) / fac);
             swapsign = false;
             number = number + 2;
@@ -400,7 +400,7 @@ double myCos( double rads)
         }
         else if( swapsign == false)
         {
-            cout << "-" << pow( rads, number) << " / " << fac << endl;
+            //cout << "+" << pow( rads, number) << " / " << fac << endl;
             end  = end + (pow( rads, number) / fac);
             swapsign = true;
             number = number + 2;
@@ -408,5 +408,15 @@ double myCos( double rads)
         }
     }
     return end;
+}
+
+
+double myCosD( double degrees)
+{
+    double rads;
+    double ans;
+    rads = (degrees * PI) / 180;
+    ans = myCos( rads);
+    return ans;
 }
 

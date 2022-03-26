@@ -54,10 +54,20 @@ int binarySearch( double array[], int size, double findVal);
 
 double factorial( int number);
 
+//Trig Functions
+
+
+//Sin functions
+
 double mySin( double rads);
 
 double mySinD( double degrees);
 
+//Cos functions
+
 double myCos( double rads);
+
+double myCosD( double degrees);
+
 
 
