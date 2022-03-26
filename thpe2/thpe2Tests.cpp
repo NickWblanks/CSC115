@@ -586,8 +586,25 @@ TEST_CASE( "myCosine - checking 0, should return 1")
     REQUIRE( (fabs( ans) - 1) < ERRORTOLERANCE);
 }
 
-    
 
+TEST_CASE( "myCosine - checking PI/2, should return 0")
+{
+    double rads = PI/2;
+    double ans = myCos( rads);
+    REQUIRE( (fabs( ans) - 0) < ERRORTOLERANCE);
+}
 
+TEST_CASE( "myCosine - checking PI/4, should return 0.70710678118")
+{
+    double rads = PI/4;
+    double ans = myCos( rads);
+    REQUIRE( (fabs( ans) - 0.70710678118) < ERRORTOLERANCE);
+}
 
+TEST_CASE( "myCosine - checking PI/3, should return about .5")
+{
+    double rads = PI/3;
+    double ans = myCos( rads);
+    REQUIRE( (fabs( ans) - .5) < ERRORTOLERANCE);
+}
 

@@ -385,13 +385,14 @@ double myCos( double rads)
 {
     bool swapsign = true;
     int i;
-    int number = 2;
+    int number = 0;
     double fac = factorial( number);
-    double end = 1;
+    double end = 0;
     for( i = 0; i <= TERMS; i++)
     {
         if( swapsign == true)
         {
+            cout << "+" << pow( rads, number) << " / " << fac << endl;
             end  = end - (pow( rads, number) / fac);
             swapsign = false;
             number = number + 2;
@@ -399,8 +400,9 @@ double myCos( double rads)
         }
         else if( swapsign == false)
         {
+            cout << "-" << pow( rads, number) << " / " << fac << endl;
             end  = end + (pow( rads, number) / fac);
-            swapsign = false;
+            swapsign = true;
             number = number + 2;
             fac = factorial( number);
         }
