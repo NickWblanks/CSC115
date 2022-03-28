@@ -669,4 +669,26 @@ TEST_CASE( "mytanD - checking 0 degrees, should return 0")
 }
 
 
+TEST_CASE( "myTanD - cheking 45 degrees, should return 1")
+{
+    double degrees = 45;
+    double ans = myTanD( degrees);
+    REQUIRE( (fabs( ans) - 1) < ERRORTOLERANCE);
+}
+
+TEST_CASE( "myTanD - checking 135 degrees, should return 1")
+{
+    double degrees = 135;
+    double ans = myTanD( degrees);
+    REQUIRE( (fabs( ans) - 1) < ERRORTOLERANCE);
+}
+
+TEST_CASE( "myTanD - checking -55 degrees, should return -1.4281480067")
+{
+    double degrees = -55;
+    double ans = myTanD( degrees);
+    REQUIRE( (fabs( ans) - 1.4281480067) < ERRORTOLERANCE);
+}
+
+
 
