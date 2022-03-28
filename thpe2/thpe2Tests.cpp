@@ -645,4 +645,19 @@ TEST_CASE( "myTan - checking tan(0), should return 0")
     REQUIRE( (fabs( ans) - 0) < ERRORTOLERANCE);
 }
 
+TEST_CASE( "myTan - checking tan(-PI/4), should return -1")
+{
+    double rads = -PI/4;
+    double ans = myTan( rads);
+    REQUIRE( (fabs( ans) - 1) < ERRORTOLERANCE);
+}
+
+
+TEST_CASE( "myTan - checking number above pi/2, 2PI/3, should return 1.7320508076")
+{
+    double rads  = (2*PI)/3;
+    double ans = myTan( rads);
+    REQUIRE( (fabs( ans) - 1.7320508076) < ERRORTOLERANCE);
+}
+
 
