@@ -3,6 +3,7 @@
 #include <cmath>
 #include <cctype>
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 //global constants
@@ -68,6 +69,10 @@ double mySinD( double degrees);
 double myCos( double rads);
 
 double myCosD( double degrees);
+
+//Tangent functions
+
+double myTan( double rads);
 
 
 

@@ -421,3 +421,16 @@ double myCosD( double degrees)
     return ans;
 }
 
+
+double myTan( double rads)
+{
+    double sin;
+    double cos;
+    double tan;
+    sin = mySin( rads);
+    cos = myCos( rads);
+    tan = sin / cos;
+    return tan;
+}
+
+

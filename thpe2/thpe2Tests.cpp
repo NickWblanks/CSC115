@@ -638,3 +638,11 @@ TEST_CASE( "my cosine, error checking, 2.09439510239, this is 120 degrees, shoul
 }
 
 
+TEST_CASE( "myTan - checking tan(0), should return 0")
+{
+    double rads = 0;
+    double ans = myTan( rads);
+    REQUIRE( (fabs( ans) - 0) < ERRORTOLERANCE);
+}
+
+
