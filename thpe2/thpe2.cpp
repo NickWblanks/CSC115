@@ -434,4 +434,15 @@ double myTan( double rads)
 }
 
 
+double myTanD( double degrees)
+{
+    double rads;
+    double ans;
+    rads = (degrees * PI) / 180;
+    ans = myTan( rads);
+    return ans;
+}
+
+
+
 

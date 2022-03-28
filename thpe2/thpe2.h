@@ -74,5 +74,8 @@ double myCosD( double degrees);
 
 double myTan( double rads);
 
+double myTanD( double rads);
+
+
 
 

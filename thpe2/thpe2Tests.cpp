@@ -661,3 +661,12 @@ TEST_CASE( "myTan - checking number above pi/2, 2PI/3, should return 1.732050807
 }
 
 
+TEST_CASE( "mytanD - checking 0 degrees, should return 0")
+{
+    double degrees = 0;
+    double ans = myTanD( degrees);
+    REQUIRE( (fabs( ans) - 0) < ERRORTOLERANCE);
+}
+
+
+
