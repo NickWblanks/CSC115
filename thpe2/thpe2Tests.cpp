@@ -615,3 +615,26 @@ TEST_CASE( "myCosD - checking 90 degrees, should return 0")
     REQUIRE( (fabs( ans) - 0) < ERRORTOLERANCE);
 }
 
+TEST_CASE( "myCosD - checking 120 degrees, should return -.5")
+{
+    double degrees = 120;
+    double ans = myCosD( degrees);
+    REQUIRE( (fabs( ans) - .5) < ERRORTOLERANCE);
+}
+
+TEST_CASE( "myCosD - checking -120 degrees, should return -.5")
+{
+    double degrees = -120;
+    double ans = myCosD( degrees);
+    REQUIRE( (fabs( ans) - .5) < ERRORTOLERANCE);
+}
+
+
+TEST_CASE( "my cosine, error checking, 2.09439510239, this is 120 degrees, should return -.5")
+{
+    double rads = 2.09439510239;
+    double ans = myCos( rads);
+    REQUIRE( (fabs( ans) - .5) < ERRORTOLERANCE);
+}
+
+

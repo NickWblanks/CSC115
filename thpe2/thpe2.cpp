@@ -332,7 +332,7 @@ int binarySearch( double array[], int size, double findVal)
 double factorial( int number)
 {
     int i;
-    int sum = 1;
+    double sum = 1;
     for( i = 1; i <= number; i++)
     {
         sum = sum * i;
@@ -352,7 +352,7 @@ double mySin( double rads)
     {
         if( swapsign == true)
         {
-            //cout << "+" << pow( rads, number) << " / " << fac << endl;
+            //cout << "+" << pow( rads, number) << " / " << fac << fixed << endl;
             end  = end + (pow( rads, number) / fac);
             swapsign = false;
             number = number + 2;
@@ -360,7 +360,7 @@ double mySin( double rads)
         }
         else if( swapsign == false)
         {
-            //cout << "-" << pow( rads, number) << " / " << fac << endl;
+            //cout << "-" << pow( rads, number) << " / " << fac << fixed << endl;
             end  = end - (pow( rads, number) / fac);
             swapsign = true;
             number = number + 2;
@@ -392,21 +392,22 @@ double myCos( double rads)
     {
         if( swapsign == true)
         {
-            //cout << "-" << pow( rads, number) << " / " << fac << endl;
-            end  = end - (pow( rads, number) / fac);
+            //cout << "+" << pow( rads, number) << " / " << fac << endl;
+            end  = end + (pow( rads, number) / fac);
             swapsign = false;
             number = number + 2;
             fac = factorial( number);
         }
         else if( swapsign == false)
         {
-            //cout << "+" << pow( rads, number) << " / " << fac << endl;
-            end  = end + (pow( rads, number) / fac);
+            //cout << "-" << pow( rads, number) << " / " << fac << endl;
+            end  = end - (pow( rads, number) / fac);
             swapsign = true;
             number = number + 2;
             fac = factorial( number);
         }
     }
+    //cout << end << endl;
     return end;
 }
 
