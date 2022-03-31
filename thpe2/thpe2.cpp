@@ -1,13 +1,17 @@
 #include "thpe2.h"
 
 
-double  mySqrt( double &stNum)
+double  mySqrt( double stNum)
 {
     int i = 0;
     double check;
     double low = 0;
     double mid;
     double max = stNum;
+    if( stNum < 1 && stNum > 0)
+    {
+        max = 1;
+    }
     if( max <= 0 )
     {
         return 0;
@@ -15,6 +19,7 @@ double  mySqrt( double &stNum)
     while( i <= 5000)
     {
         mid = (max + low) / 2;
+        //cout << mid << endl;
         check = pow( mid, 2);
         if( (fabs(check - stNum)) < ERRORVALUE)
             {
@@ -38,13 +43,17 @@ double  mySqrt( double &stNum)
 }
 
 
-double  myCbrt( double &stNum)
+double  myCbrt( double stNum)
 {
     int i = 0;
     double check;
     double low = 0;
     double mid;
     double max = stNum;
+    if( stNum < 1 && stNum > 0)
+    {
+        max = 1;
+    }
     if( max <= 0 )
     {
         return 0;
@@ -52,6 +61,7 @@ double  myCbrt( double &stNum)
     while( i <= 5000)
     {
         mid = (max + low) / 2;
+        //cout << mid << endl;
         check = pow( mid, 3);
         if( (fabs(check - stNum)) < ERRORVALUE)
             {
@@ -286,6 +296,7 @@ void mySort( double array[], int size, string order)
                     }
             }
     }
+    return;
 }
         
 
@@ -442,7 +453,5 @@ double myTanD( double degrees)
     ans = myTan( rads);
     return ans;
 }
-
-
 
 

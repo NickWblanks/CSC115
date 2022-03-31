@@ -57,6 +57,14 @@ TEST_CASE( "mySqrt - testing 22.8, should return 4.77493455453")
     REQUIRE( ans == Approx( 4.77493455453));
 }
 
+TEST_CASE( "mySqrt - testing .5, should return .70710678")
+{
+    double stNum = .5;
+    double ans;
+    ans = mySqrt( stNum);
+    REQUIRE( ans == Approx( .70710678));
+}
+
 
 
 //myCbrt --------------------------------------------------------------------------
@@ -101,6 +109,15 @@ TEST_CASE( "myCbrt - testing 187, should return 5.71848") //didnt go as far beca
     REQUIRE( ans == Approx( 5.71848));
 }
 
+TEST_CASE( "myCbrt - testing .015625, should return .250")
+{
+    double stNum = .015625;
+    double ans;
+    ans = myCbrt( stNum);
+    REQUIRE( ans == Approx( .250));
+}
+
+
 
 //myLog -------------------------------------------------------------------------------------------------------
 
@@ -140,6 +157,15 @@ TEST_CASE( "myLog - testing log5(784), should return 4.1408301425379")
     ans = myLog( base, arg);
     REQUIRE( ans == Approx( 4.1408301425379));
 }
+
+TEST_CASE( "myLog - testing log2(1024), should return 10")
+{
+    double arg = 1024;
+    int base = 2;
+    double ans = myLog( base, arg);
+    REQUIRE( ans == Approx( 10));
+}
+
 
 
 //copy array ---------------------------------------------------------------------------------
@@ -578,6 +604,8 @@ TEST_CASE( "mySinD - checking -45 degrees, should return - .70710678118")
     REQUIRE( ( fabs( ans) - .70710678118) < ERRORTOLERANCE);
 }
 
+//myCos -----------------------------------------------------------------------------
+
 
 TEST_CASE( "myCosine - checking 0, should return 1")
 {
@@ -607,6 +635,9 @@ TEST_CASE( "myCosine - checking PI/3, should return about .5")
     double ans = myCos( rads);
     REQUIRE( (fabs( ans) - .5) < ERRORTOLERANCE);
 }
+
+
+//myCosD -------------------------------------------------------------------------------
 
 TEST_CASE( "myCosD - checking 90 degrees, should return 0")
 {
@@ -638,6 +669,8 @@ TEST_CASE( "my cosine, error checking, 2.09439510239, this is 120 degrees, shoul
 }
 
 
+//myTan --------------------------------------------------------------------------
+
 TEST_CASE( "myTan - checking tan(0), should return 0")
 {
     double rads = 0;
@@ -660,6 +693,8 @@ TEST_CASE( "myTan - checking number above pi/2, 2PI/3, should return 1.732050807
     REQUIRE( (fabs( ans) - 1.7320508076) < ERRORTOLERANCE);
 }
 
+
+//myTanD ------------------------------------------------------------------------------------------
 
 TEST_CASE( "mytanD - checking 0 degrees, should return 0")
 {

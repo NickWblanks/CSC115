@@ -18,9 +18,9 @@ const double ERRORTOLERANCE = .000001;
 
 //square rt, cube rt, and log functions
 
-double  mySqrt( double &stNum);
+double mySqrt( double stNum);
 
-double myCbrt( double &stNum);
+double myCbrt( double stNum);
 
 double myLog( int base, double arg);
 
@@ -75,7 +75,5 @@ double myCosD( double degrees);
 double myTan( double rads);
 
 double myTanD( double rads);
-
-
 
 
