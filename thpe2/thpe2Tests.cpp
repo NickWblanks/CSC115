@@ -725,5 +725,3 @@ TEST_CASE( "myTanD - checking -55 degrees, should return -1.4281480067")
     REQUIRE( (fabs( ans) - 1.4281480067) < ERRORTOLERANCE);
 }
 
-
-

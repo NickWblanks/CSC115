@@ -454,4 +454,3 @@ double myTanD( double degrees)
     return ans;
 }
 
-
