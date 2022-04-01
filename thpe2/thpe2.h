@@ -22,7 +22,7 @@ double mySqrt( double stNum);
 
 double myCbrt( double stNum);
 
-double myLog( int base, double arg);
+double myLog( double arg, double base);
 
 
 //Arrays

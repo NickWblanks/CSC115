@@ -126,7 +126,7 @@ TEST_CASE( "myLog - testing log2(0), is undefined, should return 0")
     double arg = 0;
     int base = 2;
     double ans;
-    ans = myLog( base, arg);
+    ans = myLog( arg, base);
     REQUIRE( ans == 0);
 }
 
@@ -136,7 +136,7 @@ TEST_CASE( "myLog - testing log10(10), should return 1")
     double arg = 10;
     int base = 10;
     double ans;
-    ans = myLog(base, arg);
+    ans = myLog( arg, base);
     REQUIRE( ans == Approx( 1));
 }
 
@@ -145,7 +145,7 @@ TEST_CASE( "myLog - testing log4(83), should return 3.1875197156735")
     double arg = 83;
     int base = 4;
     double ans;
-    ans = myLog( base, arg);
+    ans = myLog( arg, base);
     REQUIRE( ans == Approx( 3.1875197156735));
 }
 
@@ -154,7 +154,7 @@ TEST_CASE( "myLog - testing log5(784), should return 4.1408301425379")
     double arg = 784;
     int base = 5;
     double ans;
-    ans = myLog( base, arg);
+    ans = myLog( arg, base);
     REQUIRE( ans == Approx( 4.1408301425379));
 }
 
@@ -162,9 +162,62 @@ TEST_CASE( "myLog - testing log2(1024), should return 10")
 {
     double arg = 1024;
     int base = 2;
-    double ans = myLog( base, arg);
+    double ans = myLog( arg, base);
     REQUIRE( ans == Approx( 10));
 }
+
+TEST_CASE( "myLog - testing log16(8), should return 1.33333333")
+{
+    double arg = 8;
+    int base = 16;
+    double ans = myLog( arg, base);
+    REQUIRE( ans == Approx( .75));
+}
+
+TEST_CASE( "myLog - testing log23(900), should return 2.169480884")
+{
+    double arg = 900;
+    double base = 23;
+    double ans = myLog( arg, base);
+    REQUIRE( ans == Approx( 2.169480884));
+}
+
+TEST_CASE( "myLog - testing log43.54( 87), should return 1.1834358114")
+{
+    double arg = 87;
+    double base = 43.54;
+    double ans = myLog( arg, base);
+    REQUIRE( ans == Approx( 1.1834358114));
+}
+
+
+TEST_CASE( "myLog - testing log1.5(1900), should return 18.619627224")
+{
+    double arg = 1900;
+    double base = 1.5;
+    double ans  = myLog( arg, base);
+    REQUIRE( ans == Approx( 18.619627224));
+}
+
+TEST_CASE( "myLog - testing log15(5), should return 0.59431612892")
+{
+    double arg = 5;
+    double base = 15;
+    double ans = myLog( arg, base);
+    REQUIRE( ans == Approx( 0.59431612892));
+}
+
+TEST_CASE( "myLog - testing log10(8), should return 0.90308998699")
+{
+    double arg = 8;
+    double base = 10;
+    double ans = myLog( arg, base);
+    REQUIRE( ans == Approx( 0.90308998699));
+}
+
+
+
+
 
 
 

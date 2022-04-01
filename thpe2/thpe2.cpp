@@ -16,7 +16,7 @@ double  mySqrt( double stNum)
     {
         return 0;
     }
-    while( i <= 5000)
+    while( i <= ITERATIONMAX)
     {
         mid = (max + low) / 2;
         //cout << mid << endl;
@@ -58,7 +58,7 @@ double  myCbrt( double stNum)
     {
         return 0;
     }
-    while( i <= 5000)
+    while( i <= ITERATIONMAX)
     {
         mid = (max + low) / 2;
         //cout << mid << endl;
@@ -86,7 +86,7 @@ double  myCbrt( double stNum)
 
 
 
-double myLog( int base, double arg)
+double myLog( double arg, double base)
 {
     double high = 1;
     double low = 0;
@@ -112,9 +112,10 @@ double myLog( int base, double arg)
             high = high + 1;
         }
     }
-    while( j <= 5000)
+    while( j <= ITERATIONMAX)
     {
         mid = (high + low) / 2;
+        cout << mid << endl;
         check = pow( base, mid);
         if(( fabs(check - arg)) < ERRORVALUE)
             {
