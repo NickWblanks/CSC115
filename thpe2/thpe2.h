@@ -76,4 +76,3 @@ double myTan( double rads);
 
 double myTanD( double rads);
 
-

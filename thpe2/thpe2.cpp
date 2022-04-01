@@ -115,7 +115,7 @@ double myLog( double arg, double base)
     while( j <= ITERATIONMAX)
     {
         mid = (high + low) / 2;
-        cout << mid << endl;
+        //cout << mid << endl;
         check = pow( base, mid);
         if(( fabs(check - arg)) < ERRORVALUE)
             {
@@ -454,5 +454,6 @@ double myTanD( double degrees)
     ans = myTan( rads);
     return ans;
 }
+
 
 
