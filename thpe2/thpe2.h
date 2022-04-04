@@ -1,3 +1,7 @@
+/** **********************************************************************
+ * @file
+ ************************************************************************/
+
 #pragma once
 #include <string>
 #include <cmath>
@@ -8,10 +12,52 @@ using namespace std;
 
 //global constants
 
+/** **********************************************************************
+ *
+ *  @brief
+ *  TERMS is a globally defined integer that is used for calculating sine and cosine. It represents how many iterations of the taylors series it will calc.
+ *  
+ *************************************************************************/
 const int TERMS = 10;
+
+/** **********************************************************************
+ *
+ *  @brief
+ *  PI is a globally defined double that is used for calculating sine and cosine. it represents the value of PI (3.141596).
+ *  
+ *************************************************************************/
+
 const double PI = atan(1.0) * 4;
+
+/** **********************************************************************
+ *
+ *  @brief
+ *  ERRORVALUE is a globally defined double that is used as a benchmark for acceptable answers. If a result is less than this variable then it is an acceptable answer.
+ *  This value is used primarily for the sqRt, cbRt, and logarithm functions.
+ *
+ *************************************************************************/
+
 const double ERRORVALUE = .00000000001;
+
+/** **********************************************************************
+ *
+ *  @brief
+ *  ITERATIONMAX is a globally defined double that is used to calculate how many iterations of Newtons method the function will calculate. It is used in the log, sqRt, and cbRt.
+ *  
+ *************************************************************************/
+
+
 const int ITERATIONMAX = 5000;
+
+
+/** **********************************************************************
+ *
+ *  @brief
+ *  ERRORTOLERANCE is a globally defined double that is used as a benchmark for acceptable answers. If a result is less than this variable then it is an acceptable answer.
+ *  This value is used primarily for the trigonometric functions.
+ *  
+ *************************************************************************/
+
 const double ERRORTOLERANCE = .000001;
 
 

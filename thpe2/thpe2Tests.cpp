@@ -166,7 +166,7 @@ TEST_CASE( "myLog - testing log2(1024), should return 10")
     REQUIRE( ans == Approx( 10));
 }
 
-TEST_CASE( "myLog - testing log16(8), should return 1.33333333")
+TEST_CASE( "myLog - testing log16(8), should return .75")
 {
     double arg = 8;
     int base = 16;
