@@ -5,7 +5,6 @@ void fillHand( int hands[], int size, int seed)
 {
     int i;
     int j;
-    int card;
     int temp;
     for(i=0; i<size; i++)
     {
