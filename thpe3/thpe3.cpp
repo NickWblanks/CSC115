@@ -5,23 +5,34 @@ void fillHand( int hands[], int size, int seed)
 {
     int i;
     int j;
-    int checkCard;
+    int card;
+    int temp;
     for(i=0; i<size; i++)
+    {
+        hands[i] = -1;
+    }
+    for( i = 0; i< size; i++)
     {
         hands[i] = getCard(seed);
     }
     for( i = 0; i < size; i++)
     {
-        checkCard = hands[i];
-        for( j = i + 1; j < size; j++)
+        temp = hands[i];
+        for( j = 0; j < i; j++)
         {
-            if( checkCard == hands[j])
+            if( hands[j] == temp)
             {
                 hands[i] = getCard(seed);
             }
         }
     }
 }
+
+
+
+
+
+
 
 int getCard( int seed)
 {   
@@ -349,4 +360,48 @@ bool straightCheck( int hands[], int size)
     return false;
 }
 
+void countClass( int classes[], int classification)
+{
+    if( classification == 0)
+    {
+        classes[0]++;
+    }
+    if( classification == 1)
+    {
+        classes[1]++;
+    }
+    if( classification == 2)
+    {
+        classes[2]++;
+    }
+    if( classification == 3)
+    {
+        classes[3]++;
+    }
+    if( classification == 4)
+    {
+        classes[4]++;
+    }
+    if( classification == 5)
+    {
+        classes[5]++;
+    }
+    if( classification == 6)
+    {
+        classes[6]++;
+    }
+    if( classification == 7)
+    {
+        classes[7]++;
+    }
+    if( classification == 8)
+    {
+        classes[8]++;
+    }
+    if( classification == 9)
+    {
+        classes[9]++;
+    }
+}
 
+    

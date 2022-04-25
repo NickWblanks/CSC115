@@ -37,6 +37,8 @@ int flushCheck( int hands[], int size);
 
 int pairCheck( int hands[], int size);
 
+void countClass( int classes[], int classification);
+
 bool three( int hands[], int size);
 
 bool full( int hands[], int size);
