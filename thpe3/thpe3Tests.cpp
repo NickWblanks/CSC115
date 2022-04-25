@@ -18,7 +18,6 @@ int main( int argc, char **argv)
         }
     }
     int i;
-    int j;
     int seed;
     int nHands;
     int hands[5];

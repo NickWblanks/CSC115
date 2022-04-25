@@ -30,9 +30,6 @@ void fillHand( int hands[], int size, int seed)
 
 
 
-
-
-
 int getCard( int seed)
 {   
     static default_random_engine engine( seed );
