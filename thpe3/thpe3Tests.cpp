@@ -28,12 +28,12 @@ int main( int argc, char **argv)
     {
         cout << endl;
         cout << "Usage: thpe3.exe -s seedValue quantity" << endl;
-        cout << setw(7) << "seedValue - # is integer for random numbers" << endl;
-        cout << setw(7) << "quantity - # of hands to deal" << endl;
+        cout << "       " << "seedValue - # is integer for random numbers" << endl;
+        cout << "       " << "quantity - # of hands to deal" << endl;
         cout << endl;
-        cout << setw(7) << "thpe3.exe -f inputfilename outputfilename" << endl;
-        cout << setw(7) << "inputfilename - filename containing the poker hands to classify" << endl;
-        cout << setw(7) << "outputfilename - filename to output the statistics in" << endl;
+        cout << "       " << "thpe3.exe -f inputfilename outputfilename" << endl;
+        cout << "       " << "inputfilename - filename containing the poker hands to classify" << endl;
+        cout << "       " << "outputfilename - filename to output the statistics in" << endl;
         return 0;
     }
     if( (strcmp( argv[1], "-s") != 0) && (strcmp( argv[1], "-f") != 0))
@@ -64,17 +64,17 @@ int main( int argc, char **argv)
             countClass( classes, classification);
         }
         cout << fixed << showpoint << setprecision(6);
-        cout << left << setw(20) << "Hand Name" << right << setw(10) << "Dealt" << setw(20) << "Chance" << endl;
-        cout << left << setw(20) << "Royal Flush" << right << setw(10) << classes[9] << setw(20) << double( classes[9]) / double( nHands) * 100 << "%" << endl;
-        cout << left << setw(20) << "Straight Flush" << right << setw(10) << classes[8] << setw(20) << double( classes[8])/ double( nHands) * 100 << "%" << endl;
-        cout << left << setw(20) << "Four Of A Kind" << right << setw(10) << classes[7] << setw(20) << double( classes[7])/ double( nHands ) * 100 << "%" << endl;
-        cout << left << setw(20) << "Full House" << right << setw(10) << classes[6] << setw(20) << double( classes[6])/ double( nHands) * 100 << "%" << endl;
-        cout << left << setw(20) << "Flush" << right << setw(10) << classes[5] << setw(20) << double(classes[5])/ double(nHands) * 100 << "%" << endl;
-        cout << left << setw(20) << "Straights" << right << setw(10) << classes[4] << setw(20) << double(classes[4])/ double(nHands) * 100 << "%" << endl;
-        cout << left << setw(20) << "Three of a Kind" << right << setw(10) << classes[3] << setw(20) << double( classes[3])/ double( nHands) * 100 << "%" << endl;
-        cout << left << setw(20) << "Two Pair" << right << setw(10) << classes[2] << setw(20) << double( classes[2])/ double(nHands) *100 << "%" << endl;
-        cout << left << setw(20) << "Two of a Kind" << right << setw(10) << classes[1] << setw(20) << double( classes[1])/ double(nHands) * 100 << "%" << endl;
-        cout << left << setw(20) << "High Card" << right << setw(10) << classes[0] << setw(20) << double( classes[0])/ double( nHands) * 100 << "%" << endl;
+        cout << left << setw(20) << "Hand Name" << right << setw(10) << "Dealt" << setw(15) << "Chance" << endl;
+        cout << left << setw(20) << "Royal Flush" << right << setw(10) << classes[9] << setw(15) << double( classes[9]) / double( nHands) * 100 << "%" << endl;
+        cout << left << setw(20) << "Straight Flush" << right << setw(10) << classes[8] << setw(15) << double( classes[8])/ double( nHands) * 100 << "%" << endl;
+        cout << left << setw(20) << "Four Of A Kind" << right << setw(10) << classes[7] << setw(15) << double( classes[7])/ double( nHands ) * 100 << "%" << endl;
+        cout << left << setw(20) << "Full House" << right << setw(10) << classes[6] << setw(15) << double( classes[6])/ double( nHands) * 100 << "%" << endl;
+        cout << left << setw(20) << "Flush" << right << setw(10) << classes[5] << setw(15) << double(classes[5])/ double(nHands) * 100 << "%" << endl;
+        cout << left << setw(20) << "Straights" << right << setw(10) << classes[4] << setw(15) << double(classes[4])/ double(nHands) * 100 << "%" << endl;
+        cout << left << setw(20) << "Three of a Kind" << right << setw(10) << classes[3] << setw(15) << double( classes[3])/ double( nHands) * 100 << "%" << endl;
+        cout << left << setw(20) << "Two Pair" << right << setw(10) << classes[2] << setw(15) << double( classes[2])/ double(nHands) *100 << "%" << endl;
+        cout << left << setw(20) << "Two of a Kind" << right << setw(10) << classes[1] << setw(15) << double( classes[1])/ double(nHands) * 100 << "%" << endl;
+        cout << left << setw(20) << "High Card" << right << setw(10) << classes[0] << setw(15) << double( classes[0])/ double( nHands) * 100 << "%" << endl;
         cout << endl;
         cout << left << setw(20) << "Total Hands Dealt" << right << setw(10) << nHands << endl;
     }
@@ -89,11 +89,11 @@ int main( int argc, char **argv)
         classes[10] = {0};
         if( !fin.is_open() )
         {
-            cout << "Unable to open file: " << argv[2] << endl;
+            cout << "Unable to open the file: " << argv[2] << endl;
         }
         if( !fout.is_open() )
         {
-            cout << "Unable to open file: " << argv[3] << endl;
+            cout << "Unable to open the file: " << argv[3] << endl;
         }
         while( fin >> card)
         {
@@ -218,7 +218,4 @@ TEST_CASE( "classifyHand - High card. 0, 18, 8, 25, 32")
     REQUIRE( type == HIGH);
 }
 
-
-
-
-    
+ 

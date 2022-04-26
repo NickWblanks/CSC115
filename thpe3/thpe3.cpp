@@ -420,7 +420,3 @@ void countClass( int classes[], int classification)
         classes[9]++;
     }
 }
-
-
-
-    
