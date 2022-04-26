@@ -12,21 +12,18 @@ void fillHand( int hands[], int size, int seed)
     }
     for( i = 0; i< size; i++)
     {
-        hands[i] = getCard(seed);
-    }
-    for( i = 0; i < size; i++)
-    {
-        temp = hands[i];
-        for( j = 0; j < i; j++)
+        temp = getCard(seed);
+        for( j = 0; j < 5; j++)
         {
-            if( hands[j] == temp)
+            if( temp == hands[j])
             {
-                hands[i] = getCard(seed);
+                temp = getCard(seed);
+                j = -1;
             }
         }
+        hands[i] = temp;
     }
 }
-
 
 
 
@@ -141,6 +138,7 @@ int classifyHand( int hands[], int size)
     bool isHouse = full( hands, size);
     bool isThree = three( hands, size);
     bool isStraight = straightCheck( hands, size);
+    bool hiStraight = bigStraight( hands, size);
     bool isRoyal = royalCheck( hands, size);
     int isAnyPair = pairCheck( hands, size);
     int isAnyFlush = flushCheck( hands, size);
@@ -176,7 +174,7 @@ int classifyHand( int hands[], int size)
         }
         return STRAIGHTFLUSH;
     }
-    if( isStraight == true)
+    if( isStraight == true || hiStraight == true)
     {
         return STRAIGHT;
     }
@@ -334,7 +332,7 @@ bool straightCheck( int hands[], int size)
     int values[13];
     valLookup( values, hands, size);
     int i;
-    for( i = 0; i < 13; i++)
+    for( i = 0; i < 9; i++)
     {
         if( values[i] == 1)
         {
@@ -348,6 +346,29 @@ bool straightCheck( int hands[], int size)
                         {
                             return true;
                         }
+                    }
+                }
+            }
+        }
+    }
+    return false;
+}
+
+bool bigStraight( int hands[], int size)
+{
+    int values[13];
+    valLookup( values, hands, size);
+    if( values[9] == 1)
+    {
+        if( values[10] == 1)
+        {
+            if( values[11] == 1)
+            {
+                if( values[12] == 1)
+                {
+                    if( values[0] == 1)
+                    {
+                        return true;
                     }
                 }
             }
@@ -399,5 +420,7 @@ void countClass( int classes[], int classification)
         classes[9]++;
     }
 }
+
+
 
     

@@ -47,4 +47,4 @@ bool straightCheck( int hands[], int size);
 
 bool four( int hands[], int size);
 
-
+bool bigStraight( int hands[], int size);
