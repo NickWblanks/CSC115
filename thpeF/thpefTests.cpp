@@ -2,7 +2,7 @@
 #include "..\\catch.hpp"
 #include "thpef.h"
 
-const bool RUNCATCH = true;
+const bool RUNCATCH = false;
 
 int main( int argc, char **argv)
 {
@@ -19,6 +19,7 @@ int main( int argc, char **argv)
     }
     ifstream fin;
     ofstream fout;
+    Records user;
     if( argc != 5)
     {
         cout << "Usage: thpef.exe datafile template1 template2 template3" << endl;
@@ -28,13 +29,26 @@ int main( int argc, char **argv)
         cout << "       " << "template3 --name of overdue template file" << endl;
         return 0;
     }
-    fin.open( argv[2]);
+    fin.open( argv[1]);
     if( !fin.is_open() )
     {
-        cout << "Unable to open the input file: " << argv[2] << endl;
+        cout << "Unable to open the input file: " << argv[1] << endl;
         return 0;
     }
+    
+    bool success = getClient( fin, user);
+    cout << success << endl;
+    cout << user.fName << endl;
+    cout << user.lName << endl;
+    cout << user.address << endl;
+    cout << user.city << endl;
+    cout << user.state << endl;
+    cout << user.zip << endl;
+    cout << user.transAmt << endl;
+    cout << user.currBal << endl;
 }
+
+
 
 TEST_CASE( "getDate - testing compiler and running checks.")
 {

@@ -1,4 +1,5 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
 #include <random>
 #include <string>
 #include <cctype>
@@ -11,17 +12,21 @@
 
 using namespace std;
 
-struct userRecords
+struct Records
 {
-    string firstName;
-    string lastName;
+    string fName;
+    string lName;
     string address;
     string city;
     string state;
     string zip;
-    double TransAmt;
+    double transAmt;
     double currBal;
 };
 
 
 string getDate();
+
+bool getClient( ifstream &fin, Records &user);
+
+
