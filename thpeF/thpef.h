@@ -2,6 +2,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <random>
 #include <string>
+#include <cstring>
 #include <cctype>
 #include <cmath>
 #include <iostream>
@@ -27,6 +28,18 @@ struct Records
 
 string getDate();
 
-bool getClient( ifstream &fin, Records &user);
+bool getClient( ifstream &fin, struct Records &user);
+
+void writeLetter( Records &user, string templateN, string currDate);
+
+void replaceName( string line, Records &user);
+
+void replaceAdd( string line, Records &user);
+
+void replaceCity( string line, Records &user);
+
+void replaceState( string line, Records &user);
+
+void replaceZIP( string line, Records &user);
 
 
