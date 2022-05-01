@@ -32,14 +32,9 @@ bool getClient( ifstream &fin, struct Records &user);
 
 void writeLetter( Records &user, string templateN, string currDate);
 
-void replaceName( string line, Records &user);
+string trans2Str( Records &user);
 
-void replaceAdd( string line, Records &user);
+string bal2Str( Records &user);
 
-void replaceCity( string line, Records &user);
-
-void replaceState( string line, Records &user);
-
-void replaceZIP( string line, Records &user);
 
 

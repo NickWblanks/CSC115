@@ -24,7 +24,7 @@ int main( int argc, char **argv)
     if( argc != 5)
     {
         cout << "Usage: thpef.exe datafile template1 template2 template3" << endl;
-        cout << "       " << "datafile --name of input datafile" << endl;
+        cout << "       " << "datafile --name of input data file" << endl;
         cout << "       " << "template1 --name of purchase template file" << endl;
         cout << "       " << "template2 --name of payment template file" << endl;
         cout << "       " << "template3 --name of overdue template file" << endl;
