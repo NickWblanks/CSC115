@@ -30,11 +30,12 @@ string getDate();
 
 bool getClient( ifstream &fin, struct Records &user);
 
-void writeLetter( Records &user, string templateN, string currDate);
+void writeLetter( Records &user, string templateN, string cDate);
 
 string trans2Str( Records &user);
 
 string bal2Str( Records &user);
+
 
 
 

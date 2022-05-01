@@ -1,14 +1,22 @@
 #include "thpef.h"
+#include "ourDate.h"
 
 string getDate()
 {
-    time_t myTimeT = time(nullptr);
-    string currentTime = ctime( &myTimeT );
-    string day = currentTime.substr( 8, 2);
-    string month = currentTime.substr( 4, 3);
-    string year = currentTime.substr( 20, 4);
-    string shortTime = day + " " + month + ", " + year;
-    return shortTime;
+    if( currDate == "")
+    {
+        time_t myTimeT = time(nullptr);
+        string currentTime = ctime( &myTimeT );
+        string day = currentTime.substr( 8, 2);
+        string month = currentTime.substr( 4, 3);
+        string year = currentTime.substr( 20, 4);
+        string shortTime = day + " " + month + ", " + year;
+        return shortTime;
+    }
+    else
+    {
+        return currDate;
+    }
 }
 
 
@@ -37,7 +45,7 @@ bool getClient( ifstream &fin, struct Records &user)
 }
 
 
-void writeLetter( Records &user, string templateN, string currDate)
+void writeLetter( Records &user, string templateN, string cDate)
 {
     ifstream fin;
     ofstream fout;
@@ -123,6 +131,10 @@ void writeLetter( Records &user, string templateN, string currDate)
 string trans2Str( Records &user)
 {
     double val = user.transAmt;
+    if( val < 0)
+    {
+        val = val * -1;
+    }
     string Trans;
     ostringstream myStream;
     myStream << fixed << setprecision(2);
@@ -134,6 +146,16 @@ string trans2Str( Records &user)
 string bal2Str( Records &user)
 {
     double val = user.currBal;
+    double transamt = user.transAmt;
+    if( transamt > 0)
+    {
+        val = val + transamt;
+    }
+    if( transamt < 0)
+    {
+        transamt = transamt * -1;
+        val = val - transamt;
+    }
     string bal;
     ostringstream myStream;
     myStream << fixed << setprecision(2);
@@ -141,3 +163,5 @@ string bal2Str( Records &user)
     bal = myStream.str();
     return bal;
 }
+
+

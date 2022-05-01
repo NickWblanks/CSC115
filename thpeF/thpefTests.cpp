@@ -36,43 +36,39 @@ int main( int argc, char **argv)
         cout << "Unable to open the input file: " << argv[1] << endl;
         return 0;
     }
-        while( getClient( fin, user))
+    while( getClient( fin, user))
+    {
+        int count = 0;
+        count++;
+        cout << count << endl;
+        string templateN;
+        string currDate;
+        double trans = user.transAmt;
+        double bal = user.currBal;
+        if( trans < 0)
         {
-            int count = 0;
-            count++;
-            cout << count << endl;
-            string templateN;
-            string currDate;
-            double trans = user.transAmt;
-            if( trans < 0)
+            templateN = argv[3];
+            writeLetter( user, templateN, currDate);                
+            //payment template
+        }
+        if( trans == 0)
+        {
+            if( bal == 0)
             {
-                templateN = argv[3];
-                writeLetter( user, templateN, currDate);                
-                //payment template
+                return 0;
             }
-            if( trans == 0)
-            {
-                templateN = argv[4];
-                writeLetter( user, templateN, currDate);
+            templateN = argv[4];
+            writeLetter( user, templateN, currDate);
                 //overdue template
-            }
-            if( trans > 0 )
-            {
-                templateN = argv[2];
-                writeLetter( user, templateN, currDate);
-                //purchase template
-            }
-        }   
-        /*cout << success << endl;
-        cout << user.fName << endl;
-        cout << user.lName << endl;
-        cout << user.address << endl;
-        cout << user.city << endl;
-        cout << user.state << endl;
-        cout << user.zip << endl;
-        cout << user.transAmt << endl;
-        cout << user.currBal << endl;*/
-        return 0;
+        }
+        if( trans > 0 )
+        {
+            templateN = argv[2];
+            writeLetter( user, templateN, currDate);
+            //purchase template
+        }
+    }
+    return 0;
 }
 
 
@@ -99,3 +95,5 @@ TEST_CASE( "getClient")
     CHECK( user.fName == "Ellen");
     CHECK( user.currBal == 54.60);
 }
+
+
