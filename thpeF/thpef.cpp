@@ -1,5 +1,27 @@
+/** **********************************************************************
+ * @file
+ ************************************************************************/
+
 #include "thpef.h"
 #include "ourDate.h"
+
+/** **********************************************************************
+ *  @author Nicholas K Wilk
+ *
+ *  @par Description
+ *  
+ *  This function will obtain the date as a string in the format of DAY MONTH,YEAR.
+ *
+ *  @returns a string with the date in the format of DAY MONTH,YEAR
+ *
+ *  @par Example
+ *  @verbatim
+    
+    string date = getDate();
+    return date;
+
+    @endverbatim
+ ************************************************************************/
 
 string getDate()
 {
@@ -19,6 +41,32 @@ string getDate()
     }
 }
 
+
+/** **********************************************************************
+ *  @author Nicholas K Wilk
+ *
+ *  @par Description
+ *  
+ *  This function will fill a structure with data coming in from a file. It 
+ *  will return true if it does so successfully, false if not.
+ *
+ *  @param[in] fin the file being passed in.
+ *
+ *  @param[in] user The structure containing the data variables necessary to store the data.
+ *
+ *  @returns a boolena value representing whether the data was read successfully.
+ *
+ *  @par Example
+ *  @verbatim
+    
+    bool success = getClient( fin, user)
+    if( success)
+    {
+        return user.fName; // will return the first name of user.
+    }
+
+    @endverbatim
+ ************************************************************************/
 
 bool getClient( ifstream &fin, struct Records &user)
 {
@@ -44,6 +92,31 @@ bool getClient( ifstream &fin, struct Records &user)
     
 }
 
+/** **********************************************************************
+ *  @author Nicholas K Wilk
+ *
+ *  @par Description
+ *  
+ *  This is a void function that will take data from a structure, use it to populate a template file 
+ *  provided from command line arguments. And then copy that file into a new outfile designated as the first.last.txt. 
+ *
+ *  @param[in] user The structure full of data.
+ *
+ *  @param[in] templateN the command line argument that desginates which template to use.
+ *
+ *  @param[in] cDate The date. 
+ *
+ *
+ *
+ *  @par Example
+ *  @verbatim
+    
+    templateN = argv[3]; //payment template.
+    getClient( fin, user) //obtains user data from inout datafile.
+    writeLetter( user, templateN, cDate); //takes data from struct, and outputs it into a nice file.
+
+    @endverbatim
+ ************************************************************************/
 
 void writeLetter( Records &user, string templateN, string cDate)
 {
@@ -53,6 +126,7 @@ void writeLetter( Records &user, string templateN, string cDate)
     string date = getDate();
     string trans;
     string bal;
+    int pos;
     fin.open( templateN );
     if( !fin.is_open())
     {
@@ -67,7 +141,6 @@ void writeLetter( Records &user, string templateN, string cDate)
     }
     while( getline( fin, line))
     {
-        int pos;
         pos = line.find( "#FULLNAME");
         if( pos != string::npos)
         {
@@ -128,6 +201,26 @@ void writeLetter( Records &user, string templateN, string cDate)
     fout.close();   
 }
 
+/** **********************************************************************
+ *  @author Nicholas K Wilk
+ *
+ *  @par Description
+ *  
+ *  This function will take the data from the records.transAmt location and convert it to a string.
+ *
+ *  @param[in] user The structure to pull data from.
+ *
+ *  @returns a string that represents the double value within .transAmt.
+ *
+ *  @par Example
+ *  @verbatim
+    
+    string trans = trans2Str( user); 
+    return trans;
+
+    @endverbatim
+ ************************************************************************/
+
 string trans2Str( Records &user)
 {
     double val = user.transAmt;
@@ -142,6 +235,27 @@ string trans2Str( Records &user)
     Trans = myStream.str();
     return Trans;
 }
+
+/** **********************************************************************
+ *  @author Nicholas K Wilk
+ *
+ *  @par Description
+ *  
+ *  This function will take the data from the records.currBal location and convert it to a string.
+ *  It will also convert any negative number to positive and change the balance depending on the user.transAmt.
+ *
+ *  @param[in] user The structure to pull data from.
+ *
+ *  @returns a string that matches the double value withing the .currBal.
+ *
+ *  @par Example
+ *  @verbatim
+    
+    string bal = bal2Str( user); 
+    return trans;
+
+    @endverbatim
+ ************************************************************************/
 
 string bal2Str( Records &user)
 {
