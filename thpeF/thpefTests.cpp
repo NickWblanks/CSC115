@@ -91,4 +91,3 @@ TEST_CASE( "getClient")
     CHECK( user.fName == "Ellen");
     CHECK( user.currBal == 54.60);
 }
-

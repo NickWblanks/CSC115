@@ -163,4 +163,3 @@ string bal2Str( Records &user)
     bal = myStream.str();
     return bal;
 }
-
