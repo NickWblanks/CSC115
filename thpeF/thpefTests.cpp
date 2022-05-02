@@ -44,19 +44,15 @@ int main( int argc, char **argv)
         string templateN;
         string currDate;
         double trans = user.transAmt;
-        double bal = user.currBal;
+        double bal3 = user.currBal;
         if( trans < 0)
         {
             templateN = argv[3];
             writeLetter( user, templateN, currDate);                
             //payment template
         }
-        if( trans == 0)
+        if( trans == 0 && bal3 > 0)
         {
-            if( bal == 0)
-            {
-                return 0;
-            }
             templateN = argv[4];
             writeLetter( user, templateN, currDate);
                 //overdue template
@@ -95,5 +91,4 @@ TEST_CASE( "getClient")
     CHECK( user.fName == "Ellen");
     CHECK( user.currBal == 54.60);
 }
-
 

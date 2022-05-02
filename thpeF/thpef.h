@@ -37,5 +37,3 @@ string trans2Str( Records &user);
 string bal2Str( Records &user);
 
 
-
-
